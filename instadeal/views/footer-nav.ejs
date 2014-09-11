@@ -1,0 +1,7 @@
+<nav>
+    <ul class="footer-nav">
+      <% page.root.children.forEach(function (subPage) { %>
+        <li><a href="/<%=subPage.url%>"><%=subPage.title%></a></li>
+      <% }); %>
+    </ul>
+</nav>

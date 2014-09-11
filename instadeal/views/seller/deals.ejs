@@ -1,0 +1,51 @@
+<% var bodyClass = "loggedin"; %>
+<% include ../header.ejs %>
+
+    <% include nav.ejs %>
+
+    <div class="l-container l-deals clearfix">
+      <a href="/<%=page.language%>/seller-deals/new" class="add-deal standardbtn rightbtn"><%-strings['new deal']%></a>
+      <h1>Deals</h1>
+      <div class="l-block">
+        <form method="post" action="#" id="showactiveform">
+          <div class="form-item checkbox">
+            <input type="checkbox" value="onlyactive" id="showactive">
+            <label for="showactive"><%-strings['only active']%></label>
+          </div>
+        </form>
+      </div>
+
+      <% deals.forEach(function (deal) { %>
+        <div class="l-block clearfix">
+          <div class="l-deal">
+            <img src="<%= dynamic %>/deals/<%= deal.dealtemplate_id %>.<%= deal.image_ext %>" alt="" class="l-dealimage">
+            <div class="l-dealdata">
+              <% if (deal.date !== null) { %>
+                <p><a href="/<%=page.language%>/deal/show/<%=deal.id%>"><%= deal.title %></a></p>
+              <% } else { %>
+                <p><%= deal.title %></p>
+              <% } %>
+              <p>12sec [todo]</p>
+              <p><%= (deal.date === null) ? "Niet actief" : formatDate(deal.date) %></p>
+              <p class="price">€<%= deal.price %></p>
+            </div>
+          </div>
+          <div class="l-dealactions">
+            <% if (deal.date === null) { %>
+              <a href="/<%=page.language%>/seller-deals/activate/<%=deal.dealtemplate_id%>" class="l-btn"><%-strings['activate deal']%></a>
+              <a href="/<%=page.language%>/seller-deals/edit/<%=deal.dealtemplate_id%>" class="l-btn"><%-strings['manage deal']%></a>
+            <% }  else { %>
+              <a href="/<%=page.language%>/seller-deals/manage/<%=deal.id%>" class="l-btn"><%-strings['manage activation']%></a>
+            <% } %>
+          </div>
+        </div>
+      <% }); %>
+    </div>
+  </div> <!-- #main -->
+</div> <!-- #main-container -->
+
+
+<% var noDialog = true; %>
+<% include ../footer.ejs %>
+
+</body></html>

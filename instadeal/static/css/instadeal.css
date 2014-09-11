@@ -1,0 +1,680 @@
+@font-face {
+    font-family: 'bebas_neueregular';
+    src: url('BebasNeue-webfont.eot');
+    src: url('BebasNeue-webfont.eot?#iefix') format('embedded-opentype'),
+         url('BebasNeue-webfont.woff') format('woff'),
+         url('BebasNeue-webfont.ttf') format('truetype'),
+         url('BebasNeue-webfont.svg#bebas_neueregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('OpenSans-Regular-webfont.eot');
+    src: url('OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('OpenSans-Regular-webfont.woff') format('woff'),
+         url('OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'open_sansbold';
+    src: url('OpenSans-Bold-webfont.eot');
+    src: url('OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('OpenSans-Bold-webfont.woff') format('woff'),
+         url('OpenSans-Bold-webfont.ttf') format('truetype'),
+         url('OpenSans-Bold-webfont.svg#open_sansbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, button, input, select, textarea { color: #15323b; }
+body { background: #102830; font: 13px/1.3 'open_sansregular', Arial, sans-serif; }
+::-moz-selection { background: #b3d4fc; text-shadow: none; }
+::selection { background: #b3d4fc; text-shadow: none; }
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+img { vertical-align: middle; }
+fieldset { border: 0; margin: 0; padding: 0; }
+textarea { resize: vertical; }
+p { margin: 0 0 1.3em; }
+a { color: #ff5411; }
+h1 { margin: 20px 0 30px; text-shadow: 0 1px 0 #fff; font-size: 30px; font-family: 'open_sansbold', Arial, sans-serif; font-weight: normal; }
+h2 { margin: 0 0 15px; padding-bottom: 16px; border-bottom: 1px dashed #15323b; font-size: 18px; font-family: 'open_sansbold', Arial, sans-serif; font-weight: normal; }
+h3 { margin: 0 0 15px; font-size: 13px; font-family: 'open_sansbold', Arial, sans-serif; color: #2b979a; font-weight: normal; }
+strong,
+input[type="submit"],
+th,
+.label { font-family: 'open_sansbold', Arial, sans-serif; font-weight: normal; }
+.label { margin-bottom: 10px; }
+
+*, *:before, *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+.chromeframe { margin: 0.2em 0; padding: 0.2em 0; background: #ccc; color: #000; }
+
+.wrapper { width: 95%; margin: 0 auto; }
+
+.rounded { border-radius: 9px; box-shadow: 0 5px 5px 0 rgba(1,1,1,0.07); }
+
+.btn { border-radius: 5px; }
+
+.form-item label { display: block; margin-bottom: 7px; cursor: pointer; }
+.checkbox,
+.radio { margin-bottom: 10px; }
+.checkbox label,
+.radio label { display: inline; padding-left: 5px; }
+.l-container .center { text-align: center; }
+
+.standardbtn { display: inline-block; margin: 0 7px 7px 0; padding: 8px 25px; border: 1px solid #298e90; border-radius: 5px; background: #298e90 ; color: #fff; text-transform: uppercase; text-decoration: none; }
+.standardbtn:hover,
+.standardbtn:active,
+.standardbtn:focus { border: 1px solid #ff5411; background: #ff5411; }
+.rightbtn { float: right; margin-top: 4px; margin-right: 0px }
+span.error {color: red }
+.ticket-form input[type=email].error,
+.ticket-form input[type=text].error { border: dashed 1px red; }
+
+.success { background: #e9ffd9; border:1px solid #a6ca8a; text-align: center; width: 90%; margin-left: auto; margin-right: auto; margin-bottom: 10px; padding:10px 10px 10px 36px; }
+
+/* header */
+.header-container { position: relative; width: 100%; background: #fff; }
+.header-container:after { position: absolute; left: 0; bottom: -7px; z-index: 10; content: ""; height: 7px; width: 100%; background: url(../img/bg-headershadow.png) repeat-x; }
+.logo { margin-bottom: 10px; padding-top: 7px; }
+.header-nav { display: none; margin: 0 0 10px; padding: 0; }
+.header-nav li { }
+.header-nav a { position: relative; display: block; padding: 10px 9px; border-bottom: 1px solid #d4d0c9; background: #e8e6e3; color: #15323b; font-family: 'open_sansbold', Arial, sans-serif; font-size: 13px; text-transform: uppercase; text-decoration: none; }
+.login a,
+.logout a { background: #15323b; color: #fff; }
+.header-nav .active a,
+.header-nav a:hover,
+.header-nav a:active,
+.header-nav a:focus { background: #ff5411; color: #fff; }
+#navicon { position: absolute; right: 2.5%; top: 17px; width: 37px; height: 27px; text-indent: -9999em; background: url(../img/icon-nav.png) no-repeat; cursor: pointer; }
+#navicon:hover,
+#navicon:active,
+#navicon:focus { background-position: 0 -27px; }
+
+/* main */
+.main-container { padding-bottom: 25px; background: url(../img/bg-main.jpg); }
+
+.main-top { margin-bottom: 15px; padding: 10px 10px 0; border-bottom-left-radius: 9px; border-bottom-right-radius: 9px; background: url(../img/bg-content.jpg); text-align: center; }
+#deal-searchform { margin-bottom: 25px; }
+.main-top .form-item { padding-bottom: 10px; }
+.main-top label { display: inline; color: #fff; }
+.main-top select { font-size: 16px; } /* to prevent Safari from zooming in iOS, set font-size to min. 16px */
+
+.intro { margin-bottom: 25px; text-align: center; }
+.introtext p a { color: #298F90; }
+
+.deal-ticket { width: 242px; margin: 0 auto 20px; }
+.deal-ticket a { color: #15323b; text-decoration: none; }
+.deal-text { position: relative; z-index: 5; width: 242px; height: 180px; padding: 12px 15px; background: #fff; }
+.deal-time,
+.deal-info { font-family: 'bebas_neueregular', Arial, sans-serif; text-transform: uppercase; }
+.deal-time { padding-bottom: 8px; border-bottom: 1px dashed #15323b; font-size: 18px; }
+.deal-time .time-tag { font-size: 16px; }
+.deal-text p { height: 83px; margin: 7px 0; padding-bottom: 10px; border-bottom: 1px dashed #15323b; font-size: 14px; }
+.deal-oldprice,
+.deal-newprice { float: left; border-right: 1px dashed #15323b; font-size: 24px; }
+.deal-oldprice { width: 55px; color: #a8a8a7; text-decoration: line-through; }
+.deal-newprice { width: 70px; padding-left: 12px; }
+.deal-view { float: left; width: 85px; padding-left: 12px; font-size: 16px; line-height: 14px; color: #ff5411; text-decoration: underline; }
+.expired,
+.expired .deal-view { color: #a8a8a7; }
+.expired .deal-view { text-decoration: line-through; }
+.expired .deal-time,
+.expired .deal-text p,
+.expired .deal-oldprice,
+.expired .deal-newprice { border-color: #a8a8a7; }
+
+.deals-more { text-align: center; }
+.deals-more-text { display: inline-block; margin-bottom: 12px; padding: 10px 40px; border-bottom: 1px dashed #a9b0ac ; }
+
+/* deal */
+.maindeal-nav { float: right; width: 242px; margin-bottom: 22px; }
+.alldeals { float: left; width: 99px; margin-right: 19px; padding-top: 7px; text-align: right; }
+.prev,
+.next { position: relative; float: left; width: 62px; height: 47px; background: #fff url(../img/icon-prev.png) no-repeat center center; text-indent: -9999px; }
+.prev { border-right: 1px dashed #a3aaa7 ;}
+.next { width: 62px; background-image: url(../img/icon-next.png); }
+.prev:after { position: absolute; top: 0; left: -2px; z-index: 5; content: ""; width: 2px; height: 47px; background: url(../img/bg-teeth-left.png) repeat-y; }
+.next:before { position: absolute; top: 0; right: -2px; z-index: 5; content: ""; width: 2px; height: 47px; background: url(../img/bg-teeth-right.png) repeat-y; }
+
+.maindeal { overflow: hidden; clear: both; margin-bottom: 10px; background: #fff; }
+.maindeal-attention { padding: 20px 0; background: #2b979a url(../img/bg-content.jpg); text-align: center; }
+.maindeal-action,
+.maindeal-time { border-bottom: 1px dashed #71b9bb; }
+.reservation-btn { display: inline-block; margin-bottom: 10px; padding: 7px 25px; border: 1px solid #fff; box-shadow: 0 2px 2px 0 rgba(1,1,1,0.14); background: #fff; font-size: 18px; font-family: 'open_sansbold', Arial, sans-serif; text-decoration: none; text-transform: uppercase; }
+.reservation-btn:hover,
+.reservation-btn:active,
+.reservation-btn:focus { background: #ff5411; color: #fff; }
+.maindeal-price { padding: 10px 0; }
+.maindeal-price span { font: 40px/1.2 'bebas_neueregular', Arial, sans-serif; color: #fff; }
+.maindeal-savings { background: #15323b; font: 14px/1.2 'bebas_neueregular', Arial, sans-serif; color: #fff; text-transform: uppercase; }
+.maindeal-savings div { float: left; width: 33%; padding: 5px 0; }
+.maindeal-savings span { font-size: 24px; }
+.maindeal-savings .normaal,
+.maindeal-savings .korting { border-right: 1px dashed #62767c; }
+.maindeal-savings .normaal span { text-decoration: line-through; }
+.maindeal-time { padding: 10px 0; }
+.maindeal-time em { font: 36px/1.2 'bebas_neueregular', Arial, sans-serif; color: #fff; }
+.maindeal-time .time-tag { font-size: 28px; }
+.maindeal-share { padding: 18px 10px; }
+.maindeal-share em { color: #fff; font-style: normal; }
+.maindeal-links { padding-top: 18px; }
+.maindeal-links a { display: inline-block; margin-bottom: 2px; }
+/*.maindeal-info { padding: 16px 16px 0; }*/
+.maindeal-description { padding: 16px 16px 0; }
+.reservation-btn:hover,
+.reservation-btn:active,
+.reservation-btn:focus { border-color: #ff5411; background: #ff5411; color: #fff; }
+
+.maindeal-image img,
+.contact-map img { width: 100%; max-width: 100%; height: auto; }
+.ie8 .maindeal-image img,
+.ie8 .contact-map img { width: auto; }
+
+.maindeal-contact { overflow: hidden; clear: both; margin-bottom: 10px; background: #fff; }
+.contact-data { background: #15323b; border-top-right-radius: 9px; color: #fff; }
+.contact-data h2 { margin-bottom: 0; padding: 15px 20px; border-color: #62767c; color: #fff; }
+.contact-data p { margin-bottom: 0; padding: 20px; border-bottom: 1px dashed #62767c; }
+.contact-data .last { border-bottom: 0; }
+.contact-data a { color: #fff; }
+.contact-map { padding: 10px 18px; }
+
+.location-info { clear: both; margin-bottom: 20px; padding: 16px 18px; background: #fff; }
+
+aside { width: 242px; margin: 0 auto; }
+aside .deal-ticket { width: 242px; }
+
+/* reservation */
+.steps { margin: 0; padding: 0; list-style: none; }
+.steps li { display: block; width: 150px; margin: 0 auto 10px auto; font-family: 'open_sansbold', Arial, sans-serif; line-height: 26px; text-align: left; }
+.steps span { display: inline-block; width: 26px; height: 26px; margin-right: 8px; text-align: center; }
+.done,
+.current { color: #fff; }
+.todo { color: #95c9c9; }
+.done span { background: url(../img/icon-check.png) no-repeat 50% 5px; text-indent: -9999px; }
+.current span { background: url(../img/icon-steps-current.png) no-repeat; }
+.todo span { background: url(../img/icon-steps-todo.png) no-repeat; color: #2b979a; }
+.reservation-description img { margin-bottom: 10px; }
+.reservation-container h1,
+.confirmation-container h1 { margin: 0 0 20px; }
+.reservation { overflow: hidden; background: #fff; }
+.reservation-description { padding: 18px 22px; }
+.reservation-offers,
+.reservation-data { padding: 18px 22px; border: 1px solid #e5d7c1; border-bottom: 0; background: #f5ead6 url(../img/bg-reservation-offer.png) repeat-x top; }
+.reservation-moment,
+.reservation-location { padding: 18px 22px; background: url(../img/bg-reservation-teeth.png) repeat-x top; }
+.reservation-price span,
+.reservation-date span { font: 40px/1.2 'bebas_neueregular', Arial, sans-serif; }
+.reservation-action { padding: 19px 22px; background: url(../img/bg-content.jpg); color: #fff; }
+.reservation-action .btn { margin-right: 14px; }
+.reservation-action p { margin-bottom: 0; }
+.reservation-offers .reservation-text,
+.reservation-moment .reservation-text { padding-top: 10px; border-top: 1px dashed #dcc5a2; }
+.reservation-time { padding-top: 10px; border-top: 1px dashed #e5d7c1; }
+.reservation-moment .form-item { float: left; }
+.reservation-moment label { display: inline-block; margin: 0 8px 15px 0; padding: 6px 10px; box-shadow: 0 1px 0 0 rgba(0,0,0,0.04); border: 1px solid #e5d7c1; border-radius: 5px; background: #f5ead6 url(../img/bg-label.png) repeat-x bottom; }
+/*.reservation-moment input { display: none; }*/
+
+.reservation-intro { padding: 18px 22px; }
+.reservation-intro img { margin-bottom: 20px; }
+.reservation-use { padding: 12px 22px; background: #2b979a; text-align: center; color: #fff; }
+.reservation-data { line-height: 1.8; }
+.reservation-location { padding: 25px 22px; text-align: center; }
+.locationname { margin-bottom: 22px; font-size: 18px; font-weight: bold; }
+
+/* how, seller */
+.registration-container { padding-bottom: 40px; background: url(../img/bg-content.jpg); }
+.registration-container h1 { margin-bottom: 20px; color: #fff; text-shadow: none; text-align: center; }
+.ticket-form .column { position: relative; padding: 12px 17px; background: url(../img/bg-form.jpg); }
+.ticket-form .column:last-child { border: 0; }
+.ticket-form input[type="text"],
+.ticket-form input[type="email"],
+.ticket-form input[type="password"] { width: 100%; padding: 9px 5px; border: 1px dashed #15323b; }
+.ticket-form .form-item { overflow: hidden; padding-bottom: 10px; }
+.ticket-form .btn { padding: 8px 37px; border-radius: 5px; border: 1px solid #15323b; box-shadow: 0 2px 2px 0 rgba(1,1,1,0.14); background: #15323b; color: #fff; text-transform: uppercase; font-size: 18px; font-family: 'open_sansbold', Arial, sans-serif; }
+.ticket-form .btn:hover,
+.ticket-form .btn:active,
+.ticket-form .btn:focus { border: 1px solid #ff5411; background: #ff5411; }
+.ticket-form .column:before { position: absolute; bottom: 0; right: 0; z-index: 5; content: ""; width: 100%; height: 1px; margin: 0 9px; border-top: 1px dashed #278a89; }
+.lt-ie9 .ticket-form .column:before,
+.ticket-form .column:last-child:before { display: none; } 
+
+.what-container { padding-bottom: 30px; background: #f4f4f4 url(../img/bg-how.png) repeat-x bottom; }
+.what-container,
+.how-container { text-align: center; }
+.what-container h1,
+.how-container h1 { margin: 0 0 30px; padding: 30px 0; border-bottom: 1px dashed #15323b; color: #2b979a; }
+.how-container .column { padding-bottom: 20px; text-align: left; }
+.columncount { margin-bottom: 20px; text-shadow: 0 1px 0 #fff; font-size: 30px; font-family: 'open_sansbold', Arial, sans-serif; }
+.howlinks { clear: both; padding-top: 20px; border-top: 1px dashed #15323b; }
+.what-container .deal-ticket { float: none; margin: 0 auto 20px; }
+
+/* login */
+.login-form { font-size: 13px; }
+.login-form h1 { margin: 0 0 10px; }
+.login-form input[type="text"],
+.login-form input[type="email"],
+.login-form input[type="password"] { width: 100%; }
+.login-form .form-item { overflow: hidden; padding-bottom: 10px; }
+.login-form .btn { margin-right: 10px; padding: 5px 10px; border-radius: 5px; border: 1px solid #15323b; box-shadow: 0 2px 2px 0 rgba(1,1,1,0.14); background: #15323b; color: #fff; text-transform: uppercase; }
+.login-form .btn:hover,
+.login-form .btn:active,
+.login-form .btn:focus { border: 1px solid #ff5411; background: #ff5411; }
+.login-form a { color: #2b979a; }
+.login-form a:hover,
+.login-form a:active,
+.login-form a:focus { color: #ff5411; }
+.login-form .form-actions { margin-bottom: 10px; }
+
+/* contact */
+.contact-ticket { width: 242px; margin: 0 auto 20px; }
+.contact-ticket a { color: #ff5411; }
+.contact-text { position: relative; z-index: 5; width: 242px; height: 180px; padding: 12px 15px; background: #fff; }
+.contact-name { margin-bottom: 30px; padding: 17px 0 30px 0; border-bottom: 1px dashed #15323b; font-size: 15px; font-family: 'open_sansbold', Arial, sans-serif; }
+.contact-description { width: 242px; margin: 0 auto; }
+
+/* logged in */
+.l-container a { color: #2b979a; }
+.l-container a:hover,
+.l-container a:active,
+.l-container a:focus { color: #ff5411; }
+.l-container .standardbtn,
+.l-container .standardbtn:hover,
+.l-container .standardbtn:active,
+.l-container .standardbtn:focus { color: #fff; }
+.l-tabs { position: relative; margin: 22px 0 10px 0; padding: 45px 0 0; border-bottom: 1px solid #d4d0c9; list-style: none; }
+.l-tabs a { display: block; padding: 10px 13px; border-top: 1px solid #d4d0c9; background: #fff; text-decoration: none; text-transform: uppercase; font-family: 'open_sansbold', Arial, sans-serif; color: #15323b; }
+.l-tabs .active a { color: #ff5411; }
+.l-tabs a:hover,
+.l-tabs .active a:hover,
+.l-tabs a:active,
+.l-tabs .active a:active,
+.l-tabs a:focus,
+.l-tabs .active a:focus { color: #ff5411; text-decoration: underline; }
+.verkoper { padding-top: 0; }
+.l-container { position: relative; z-index: 5; clear: both; padding: 22px 13px 0; background: #fff; border: 1px solid #d4d0c9; box-shadow: 0 0 6px 0 rgba(1,1,1,0.2); }
+.subnav { margin-bottom: 20px; }
+.subnav a { float: left; padding: 8px; border: 1px solid #d4d0c9; background: #f1efef; color: #15323b; text-decoration: none; text-align: center; }
+.subnav .first { border-top-left-radius: 3px; border-bottom-left-radius: 3px; }
+.subnav .last { border-top-right-radius: 3px; border-bottom-right-radius: 3px; }
+.subnav .active { border-color: #15323b; box-shadow: inset 0 0 4px 0 rgba(1,1,1,0.25); background: #3b5b65; color: #fff; }
+.l-container h1 { margin: 0; }
+.l-block { margin-bottom: 19px; padding: 11px 14px; border: 1px solid #d4d0c9; border-radius: 3px; background: #f1efef; }
+.l-container label { font-family: 'open_sansbold', Arial, sans-serif; }
+.l-container label span { font-family: 'open_sansregular', Arial, sans-serif; }
+.l-container input[type="text"],
+.l-container input[type="email"],
+.l-container textarea { width: 100%; margin-bottom: 10px; }
+.l-container select { margin-bottom: 10px; }
+.l-link { display: inline-block; width: 100%; padding: 5px 18px; border: 1px solid #d4d0c9; border-radius: 3px; box-shadow: 0 0 6px 0 rgba(1,1,1,0.2); background: #fff; text-decoration: none; }
+.select-image { padding: 10px 18px 10px 50px; background: #fff url(../img/icon-paperclip.png) no-repeat 15px 7px; }
+.select-image a { display: inline-block; text-decoration: none; color: #a8a8a7; }
+.select-image span { color: #2b979a; text-decoration: underline; }
+.select-image a:hover span { color: #ff5411; }
+.select-image img { margin-left: 20px; }
+.socialmedia-link { margin-bottom: 10px; }
+.l-actions { margin-left: -13px; margin-right: -13px; padding: 22px 13px; background: #2b979a; }
+.l-btn { padding: 10px 50px; border: 0; border-radius: 3px; text-transform: uppercase; }
+.l-btn:hover,
+.l-btn:active,
+.l-btn:focus { background: #ff5411; }
+.l-mainaction { background: #15323b; color: #fff; }
+#progressbar { width: 100%; height: 16px; background: #15323b; }
+#progressbar div { width: 0; height: 100%; background: #2b979a; }
+.l-container h2 { margin-bottom: 5px; padding: 0; border: 0; font-size: 13px; }
+.form-nummer,
+.form-postcode { width: 80px; }
+.l-main { margin-bottom: 20px; }
+.l-side { width: auto; }
+.l-deals h1 { margin-bottom: 10px; }
+#showactiveform .checkbox { margin-bottom: 0; padding: 0; }
+#showactiveform label { margin-bottom: 0; }
+.l-description { float: right; width: 350px;  margin-bottom: 10px}
+.l-dealimage { margin-bottom: 14px; min-height: 150px; }
+.l-dealdata .price { font-family: 'open_sansbold', Arial, sans-serif; }
+.l-dealactions { clear: both; }
+.l-dealtime { float: left; margin-bottom: 10px; padding: 5px 18px; background: #d4d0c9; font-family: 'open_sansbold', Arial, sans-serif; }
+.l-block .l-btn { display: inline-block; margin-bottom: 10px; padding: 5px 18px; border: 1px solid #d4d0c9; box-shadow: 0 0 6px 0 rgba(1,1,1,0.2); background: #fff; text-decoration: none; color: #384c53; text-transform: none; font-family: 'open_sansbold', Arial, sans-serif; }
+.l-dealactions a { clear: both; float: left; display: block; padding: 5px 13px; }
+.l-dealactions .preview { padding: 5px 13px 5px 35px; background: #fff url(../img/icon-preview.png) no-repeat 11px 50%; }
+.l-reservations h1 { margin-bottom: 20px; }
+.l-show-deals { margin-bottom: 20px; }
+.l-show-deals
+.date { float: left; margin-right: 10px; }
+.l-container .date input { width: 100px; padding: 5px 1px; background-image: url(../img/icon-calendar.png); background-repeat: no-repeat; background-position: right center; }
+.date.last { margin-right: 0; }
+.l-deal-showaction .l-btn { padding: 6px 45px 6px 13px; box-shadow: 0 0 6px 0 rgba(1,1,1,0.2); border: 1px solid #549454; background: #6aad6a url(../img/icon-search.png) no-repeat right center; color: #fff; }
+.l-deal-showaction .l-btn:hover,
+.l-deal-showaction .l-btn:active,
+.l-deal-showaction .l-btn:focus { background-color: #549454; }
+.l-reservation .l-block { margin-top: 10px; padding: 0; }
+.reservation-table { width: 100%; }
+.reservation-table tr:last-child td:first-child { border-bottom-left-radius: 3px; }
+.reservation-table tr:last-child td:last-child { border-bottom-right-radius: 3px; }
+.reservationmoments { width: 250px; border-bottom: 1px solid #d4d0c9; border-left: 1px solid #d4d0c9; }
+.reservation-table th,
+.reservationmoments th { padding: 8px 12px; border-right: 1px solid #fff; background: #d4d0c9; text-align: left; }
+.reservation-table td,
+.reservationmoments td { padding: 8px 12px; border-right: 1px solid #d4d0c9; border-top: 1px solid #d4d0c9; background: #fff; }
+.reservation-table .actions { border-right: 0; }
+.reservationmoments .last { border-color: #d4d0c9; }
+.l-docs-actions { padding: 11px 14px 0; text-align: right; }
+.l-docs-actions .l-btn { margin: 0 0 10px 10px; }
+.l-docs-actions .pdf { padding-left: 35px; background: #fff url(../img/icon-pdf.png) no-repeat 11px 50%; }
+.l-deal-imageactions { clear: both; }
+.l-newdeal { margin-top: 20px; }
+.l-newdeal h1 { margin-bottom: 10px; }
+.l-newdeal .price { float: left; width: 120px; margin-right: 10px; }
+.l-newdeal .last { margin-right: 0; }
+.l-newdeal .preview { float: none; display: inline-block; margin-bottom: 20px; padding: 5px 13px 5px 35px; border: 1px solid #d4d0c9; box-shadow: 0 0 6px 0 rgba(1,1,1,0.2); background: #fff url(../img/icon-preview.png) no-repeat 11px 50%; text-decoration: none; color: #384c53; text-transform: none; font-family: 'open_sansbold', Arial, sans-serif; text-align: center; }
+.l-newdeal .l-actions .l-btn { clear: both; float: left; margin-bottom: 10px; }
+.l-subaction { background: #fff; }
+.l-newdeal .cancel-link { clear: left; }
+.l-newdeal .cancel-link,
+.l-newdeal .delete-link { float: left; display: inline-block; margin: 10px 0; color: #fff; font-family: 'open_sansbold', Arial, sans-serif; }
+.l-newdeal .delete-link { float: right; margin-right: 0; }
+.l-newdeal .cancel-link:hover,
+.l-newdeal .delete-link:hover { color: #15323b; }
+.l-actions p { clear: both; margin: 0; padding-top: 10px; }
+
+.l-tabs .standardbtn { position: absolute; top: 0; left: 0; display: inline-block; margin-bottom: 0; padding: 8px 25px; border: 1px solid #298e90; border-radius: 5px; background: #298e90; color: #fff; font-family: 'open_sansregular', Arial, sans-serif; }
+.l-tabs .standardbtn:hover { border: 1px solid #ff5411; background: #ff5411; text-decoration: none; color: #fff; }
+.l-myreservations .l-block { width: 272px; margin: 0 auto 20px auto; padding: 0; }
+.l-myreservation { height: 280px; padding: 11px 14px 0; }
+.l-myreservation img { margin-bottom: 10px; }
+.l-myreservation .l-btn { float: right; }
+.l-myreservation-data { clear: both; padding: 11px 14px; background: #d4d0c9; }
+.l-myreservation-data .date { float: left; width: 50%; margin: 0; }
+.l-myreservation-data .price { float: right; width: 50%; margin: 0; font-family: 'open_sansbold', Arial, sans-serif; text-align: right; }
+
+.l-account h1 { margin-bottom: 10px; }
+.account-data { margin-bottom: 10px; }
+
+/* footer */
+.footer-container { text-align: center; }
+.footer-1 { padding: 30px 0 0; border-bottom: 1px solid #050a0d; background: #15323b; color: #fff; line-height: 1.5; }
+.footer-1 a { color: #fff; }
+.footer-2 { padding: 20px 0; border-top: 1px solid #2a444d ; background: #102830; color: #384c53; }
+.footer-2 a { color: #384c53; text-decoration: none; }
+address { margin-bottom: 30px; font-style: normal; }
+address a { text-decoration: none; }
+.footer-nav { margin: 0 0 30px; padding: 0; }
+.footer-nav li { margin-bottom: 5px; }
+.socialmedia { margin-bottom: 30px; padding: 0; list-style: none; }
+.socialmedia li { display: inline-block; }
+.socialmedia a { display: block; width: 41px; height: 41px; margin-right: 10px; text-indent: -9999px; text-align: left; }
+.socialmedia li:last-child a { margin-right: 0; }
+.twitter { background: url(../img/icons-socialmedia.png) no-repeat 0 0; }
+.facebook { background: url(../img/icons-socialmedia.png) no-repeat -51px 0; }
+.instagram { background: url(../img/icons-socialmedia.png) no-repeat -102px 0; }
+.pinterest { background: url(../img/icons-socialmedia.png) no-repeat -153px 0; }
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media only screen and (min-width: 480px) {
+  #navicon { display: none; }
+  .header-nav { position: relative; float: right; display: block; margin: 0; padding: 0; }
+  .header-nav li { float:left; margin-left: 11px; margin-bottom: 10px; }
+  .header-nav a { position: relative; display: inline-block; height: 28px; padding: 6px 9px; border: 0; background: #e8e6e3; color: #15323b; font-family: 'open_sansbold', Arial, sans-serif; font-size: 13px; text-transform: uppercase; text-decoration: none; }
+  .header-nav a:before { position: absolute; top: 0; left: 0; z-index: 5; content: ""; width: 2px; height: 28px; background: url(../img/bg-teeth-right.png) repeat-y; }
+  .header-nav a:after { position: absolute; top: 0; right: 0; z-index: 5; content: ""; width: 2px; height: 28px; background: url(../img/bg-teeth-left.png) repeat-y; }
+  .login a,
+  .logout a { background: #15323b; color: #fff; }
+  .header-nav .active a,
+  .header-nav a:hover,
+  .header-nav a:active,
+  .header-nav a:focus { background: #ff5411; color: #fff; }
+  .loggedin .header-nav .login { position: absolute; top: -35px; right: 0; }
+  .main-top .form-item { display: inline-block; margin-right: 9px; }
+  .main-top .form-item.last { margin-right: 0; }
+  .l-container { padding: 22px 29px 0; }
+  .l-actions { margin-left: -29px; margin-right: -29px; padding: 22px 29px; }
+  .maindeal-action,
+  .maindeal-price,
+  .maindeal-time,
+  .maindeal-share { float: left; width: 50%; }
+  .maindeal-action { margin-bottom: 10px; }
+  .maindeal-savings { clear: both; margin-bottom: 10px; }
+  .maindeal-action,
+  .maindeal-time { border-bottom: 0; border-right: 1px dashed #71b9bb; }
+  .add-deal { padding: 8px 13px; }
+  .subnav a { padding: 8px 22px; }
+  #copycompanydata { float: left; margin: 3px 0 0 0; vertical-align: top; }
+  .l-newdeal .l-actions .l-btn { clear: none; margin-right: 10px; }
+}
+
+@media only screen and (min-width: 510px) {
+  .checkbox label { display: inline-block; }
+  .deal-ticket,
+  .contact-ticket,
+  .contact-description { width: 484px; }
+  .deal-text,
+  .deal-image,
+  .contact-image,
+  .contact-text { float: left; }
+  aside,
+  aside .deal-ticket { width: 484px; }
+  .footer-container { text-align: left; }
+  address,
+  .footer-nav { float: left; width: 50%; }
+  .socialmedia { clear: both; }
+}
+
+@media only screen and (min-width: 650px) {
+  .add-deal { padding: 8px 25px; }
+  .header-container { position: fixed; z-index: 20; }
+  .main-container { padding-top: 66px; }
+  .loggedin .main-container { padding-top: 80px; }
+  .logo { float: left; }
+  .header-nav { margin-top: 17px; }
+  .loggedin .header-nav { margin-top: 45px; }
+  .main-top select { font-size: 13px; }
+  .deals-more { clear: both; }
+  .deal h1 { float: left; width: 77%; }
+  .maindeal-nav { width: 125px; }
+  .alldeals { float: none; clear: both; display: inline-block; width: 100%; margin: 10px 0; }
+  .maindeal-description { float: left; width: 90%; }
+  .steps li { display: inline-block; width: auto; margin: 0 31px 10px 0; padding-right: 37px; background: url(../img/icon-steps.png) no-repeat 100% 8px; text-align: center; }
+  .steps .last { margin-right: 0; background: none; }
+  .reservation-container { width: 580px; margin: 0 auto; }
+  .reservation-description img { float: left; }
+  .reservation-text { float: right; width: 384px; min-height: 100px; padding-left: 20px; }
+  .reservation-offers .reservation-text,
+  .reservation-moment .reservation-text { padding-top: 0; border-top: 0; border-left: 1px dashed #dcc5a2; }
+  .reservation-time { padding-top: 0; border-top: 0; border-left: 1px dashed #e5d7c1; }
+  .reservation-price,
+  .reservation-date { float: left; width: 150px; padding: 18px 25px 0 0; text-align: right; }
+  .reservation-action { padding-left: 192px; }
+  .reservation-action .btn { float: left; margin-bottom: 0; }
+  .reservation-action p { margin: 0; padding: 10px 0 0; }
+  .reservation-datablock { margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px dashed #dcc5a2; }
+  .reservation-datablock:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: 0; }
+  .reservation-data .column { float: left; width: 50%; }
+  .reservation-data .column:last-child { text-align: right; }
+  .l-dealimage { float: left; margin-right: 15px; }
+  .l-newdeal .cancel-link { clear: none; }
+  .l-deal-imageactions { clear: none; float: right; width: 270px; }
+  .l-account .label,
+  .account-data { float: left; width: 33%; margin: 0; }
+  .l-account .action { text-align: right; }
+  .social .label { width: 50%; }
+}
+
+@media only screen and (min-width: 680px) {
+  .l-myreservations .l-block { float: left; margin: 0 20px 20px 0; }
+}
+
+@media only screen and (min-width: 768px) {
+  .wrapper { width: 725px; margin: 0 auto; }
+  .deal { float: left; width: 725px; }
+  .maindeal-action,
+  .maindeal-price,
+  .maindeal-time,
+  .maindeal-share { float: none; width: 100%; }
+  .maindeal-action,
+  .maindeal-savings { margin-bottom: 0; }
+  .maindeal-action,
+  .maindeal-time { border-bottom: 1px dashed #71b9bb; border-right: 0; }
+  .maindeal-attention { float: left; width: 198px; border-top-right-radius: 0; }
+  .maindeal-image { width: 527px; }
+  .contact-map,
+  .maindeal-info { float: right; width: 527px; }
+  .maindeal-contact { width: 725px; }
+  .contact-data { float: left; padding-bottom: 10px; border-top-right-radius: 0; }
+  .location-info { margin-left: 198px; }
+  address { width: 40%; }
+  .footer-nav,
+  .socialmedia { clear: none; width: 30%; }
+  .footer-nav li { margin-bottom: 0; }
+  .socialmedia { float: left; text-align: right; }
+  .form-straat,
+  .form-gemeente { float: left; width: 545px; margin-right: 10px; }
+  .form-gemeente { margin-right: 0; }
+  .form-nummer,
+  .form-postcode { float: left; }
+  .form-postcode { margin-right: 10px; }
+  .l-tabs { border-bottom: 0; }
+  .l-tabs li { float: left; }
+  .l-tabs .my-account { float: right; }
+  .l-tabs a { display: block; margin: 2px 5px 0 0; padding: 13px 23px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid #d4d0c9; border-bottom: 0; }
+  .l-tabs .active a { position: relative; z-index: 10; top: 1px; margin-top: 1px; padding-top: 14px; box-shadow: 0 0 6px 0 rgba(1,1,1,0.2); color: #15323b; }
+  .l-tabs .active a:after { position: absolute; z-index: 15; left: -5px; bottom: -6px; content: ""; width: 105%; height: 6px; background: #fff; }
+  .l-tabs .first a:after { left: 0; }
+  .l-tabs .my-account.active a:after { left: auto; right: 0; }
+  .l-tabs .my-account a { margin-right: 0; }
+  .l-deals .l-block { position: relative; }
+  .l-dealimage { margin-bottom: 0; }
+  .l-dealactions { position: absolute; bottom: 11px; right: 14px; width: 270px; padding-top: 114px; text-align: right; }
+  .l-dealtime { float: none; text-align: center; }
+  .l-dealactions .l-btn,
+  .l-dealsubactions { float: right; }
+  .l-dealsubactions { width: 100%; }
+  .l-dealsubactions a { width: 50%; }
+}
+
+@media only screen and (min-width: 1024px) {
+  .loggedin .header-nav { margin-top: 17px; }
+  .loggedin .header-nav .login { position: relative; top: auto; right: auto; }
+  .loggedin .main-container { padding-top: 66px; }
+  .loggedin .header-nav .login { clear: none; float: left; }
+  .wrapper { width: 990px;}
+  .deal-ticket,
+  .contact-block { float: left; margin-right: 22px; }
+  .deal-ticket:nth-child(2n),
+  .contact-block.last { margin-right: 0; }
+  .deal h1 { width: 725px; }
+  .maindeal-nav { width: 242px; margin-top: 22px; margin-right: -264px; }
+  .alldeals { float: left; clear: none; display: inline-block; width: 99px; margin: 0 19px 0 0; }
+  .maindeal,
+  .maindeal-contact { width: 725px; }
+  .contact-data { width: 198px; }
+  #registrationsellerform { width: 636px; margin: 0 auto; }
+  .ticket-form .column { float: left; width: 353px; height: 165px; border: 0; }
+  .ticket-form .column.last { width: 283px; padding-top: 30px; padding-left: 50px; }
+  .ticket-form .column:after { position: absolute; right: -9px; top: 75px; z-index: 5; content: ""; width: 19px; height: 19px; background: url(../img/icon-arrow.png) no-repeat; }
+  .ticket-form .column:before { position: absolute; right: 0; top: 0; z-index: 5; content: ""; width: 1px; height: 100%; margin: 9px 0; border-right: 1px dashed #278a89; }
+  .lt-ie9 .ticket-form .column:after,
+  .lt-ie9 .ticket-form .column:before,
+  .ticket-form .column.last:after,
+  .ticket-form .column.last:before { display: none; }
+  .password-item { float: left; width: 185px; }
+  .showpassword-item { float: left; width: 128px; margin-top: 22px; padding-left: 30px; }
+  .showpassword-item input,
+  .conditions-item input { float: left; margin: 3px 0 0 0; vertical-align: top; }
+  .showpassword-item label { float: left; width: 75px; }
+  .conditions-item label { float: left; width: 175px; }
+  .how-container .column { float: left; width: 30%; margin-right: 3%; }
+  .how-container .column.last { margin-right: 0; }
+  aside { float: right; margin-top: 91px; }
+  aside,
+  aside .deal-ticket,
+  .l-side { position: relative; width: 242px; }
+  .l-tabs { padding: 0; }
+  .l-tabs .standardbtn { position: relative; }
+  .l-main { float: left; width: 658px; margin-bottom: 0; }
+  .l-actions { margin-right: -301px; }
+  .l-newdeal .l-actions { margin-right: -29px; }
+  .cancel-block { position: absolute; right: 29px; bottom: 82px; width: 242px; }
+  .form-straat,
+  .form-gemeente { width: 538px; }
+  .l-side { margin-top: 0; }
+  .l-deal-showaction .l-btn { float: right; }
+  .l-reservations .l-main { float: right; }
+  .l-reservations .l-side { float: left; }
+  .l-deal-imageactions { width: 640px; }
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.hidden { display: none !important; visibility: hidden; }
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px;}
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+.invisible { visibility: hidden; }
+
+.clearfix:before,
+.clearfix:after { content: " "; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+@media print {
+  * { box-shadow: none !important; text-shadow: none !important; }
+
+  a,
+  a:visited { text-decoration: underline; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+
+  /*
+   * Don't show links for images, or javascript/internal links
+   */
+
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after { content: ""; }
+
+  pre,
+  blockquote { border: 1px solid #999; page-break-inside: avoid; }
+
+  thead { display: table-header-group; /* h5bp.com/t */ }
+  tr,
+  img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+
+  @page { margin: 0.5cm; }
+
+  p,
+  h2,
+  h3 { orphans: 3; widows: 3; }
+  h2,
+  h3,
+  .l-datetime { page-break-after: avoid; }
+
+  .rounded,
+  .l-block,
+  .reservation-table tr:last-child td:first-child,
+  .reservation-table tr:last-child td:last-child { border-radius: 0; }
+  .l-container { border: 0; }
+  .header-container, .footer-container, .main-top, .reservationlinks, .canceldeal, .l-tabs, aside, .l-docs-actions { display: none; }
+  .main-container { padding: 20pt; /*-webkit-print-color-adjust: exact;*/ }
+  .wrapper { width: auto; }
+  .reservation-datablock { margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px dashed #ccc; }
+  .reservation-datablock:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: 0; }
+  .reservation-data .column { float: left; width: 50%; }
+  .reservation-data .column:last-child { text-align: right; }
+  .reservation-container { width: auto; }
+  .reservation-intro { border: 1px solid #ccc; }
+  .reservation-use { border-left: 1px solid #ccc; border-right: 1px solid #ccc; color: #ccc; }
+  .reservation-data { border: 1px solid #ccc; }
+  .reservation-location { border: 1px solid #ccc; border-top: 0; }
+}

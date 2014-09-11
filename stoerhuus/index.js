@@ -32,17 +32,17 @@ cody.server.get("/cody/static/*", function (req, res) {
 
 
 cody.startWebApp(cody.server, {
-    "name": "empty",
+    "name": "stoerhuus",
     "mailFrom": "info@mysite.com",
     "smtp": "smtpmailer.mysite.com",
     "version": "V0.1",
     "defaultlanguage": "en",
-    "hostnames" : "mysite.com,www.mysite.com,mysite.local",
+    "hostnames" : "stoerhuus.local,www.stoerhuus.be,stoerhuus.be",
     "dbuser": "cody",
     "dbpassword": "ydoc",
     "dbhost": "localhost",
-    "datapath": "/usr/local/data/empty",
-    "db": "empty",
+    "datapath": "/usr/local/data/stoerhuus",
+    "db": "stoerhuus",
     "controllers": require("./controllers/")
   },
   function() {

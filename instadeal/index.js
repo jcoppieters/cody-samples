@@ -32,22 +32,22 @@ cody.server.get("/cody/static/*", function (req, res) {
 
 
 cody.startWebApp(cody.server, {
-    "name": "empty",
+    "name": "instadeal",
     "mailFrom": "info@mysite.com",
     "smtp": "smtpmailer.mysite.com",
     "version": "V0.1",
-    "defaultlanguage": "en",
-    "hostnames" : "mysite.com,www.mysite.com,mysite.local",
+    "defaultlanguage": "nl",
+    "hostnames" : "instadeal.local",
     "dbuser": "cody",
     "dbpassword": "ydoc",
     "dbhost": "localhost",
-    "datapath": "/usr/local/data/empty",
-    "db": "empty",
+    "datapath": "/usr/local/data/instadeal",
+    "db": "instadeal",
     "controllers": require("./controllers/")
   },
   function() {
-    console.log("Loaded Empty web app....");
-    var portNr = 3001;
+    console.log("Loaded instadeal web app....");
+    var portNr = 3009;
     cody.server.listen(portNr);
     console.log('Listening on port ' + portNr);
   }

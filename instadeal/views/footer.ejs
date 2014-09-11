@@ -1,0 +1,41 @@
+<div class="footer-container">
+    <div class="footer-1">
+        <footer class="wrapper clearfix">
+
+            <% include address.ejs %>
+            <% include footer-nav.ejs %>
+
+            <ul class="socialmedia clearfix">
+                <li><a href="#" class="twitter">Twitter</a></li>
+                <li><a href="#" class="facebook">Facebook</a></li>
+                <li><a href="#" class="instagram">Instagram</a></li>
+                <li><a href="#" class="pinterest">Pinterest</a></li>
+            </ul>
+        </footer>
+    </div>
+    <div class="footer-2">
+        <footer class="wrapper">
+            &copy;2013 Instadeal | <a href="#"><%-page.root.getContent('terms and conditions').render(controller)%> </a>
+        </footer>
+    </div>
+</div>
+
+<div id="dialog-form">
+    <form method="post" action="#" id="loginform" class="login-form">
+        <h1>Login</h1>
+        <div class="form-item">
+            <label for="login-email">E-mail</label>
+            <input type="text" name="email" id="login-email" value="">
+        </div>
+        <div class="form-item">
+            <label for="login-password">Wachtwoord</label>
+            <input type="password" name="password" id="login-password" value="">
+        </div>
+        <p><a href="#">Wachtwoord vergeten?</a></p>
+        <div class="form-actions">
+            <input type="submit" value="Login" class="login-btn btn">
+        </div>
+        <p><a href="#" class=""><img src="<%=static%>/img/bt-facebooklogin.png" alt=""></a></p>
+        <p>Heeft u nog geen login? <a href="hoe.html">Registreer</a></p>
+    </form>
+</div>

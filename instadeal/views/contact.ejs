@@ -1,0 +1,19 @@
+<% include header %>
+
+      <div class="wrapper clearfix">
+        <article class="contact-container clearfix">
+          <h1><%-render({name: 'contact'})%></h1>
+                  <% var i = 0; %>
+            <%  page.children.forEach(function (cPage) { %>
+
+              <div class="contact-block ">
+                <% page = cPage %>
+                  <% include contact-ticket.ejs %>
+              </div>
+            <% }); %>
+
+        </article>
+      </div>
+    </div> <!-- #main-container -->
+
+<% include footer.ejs %>

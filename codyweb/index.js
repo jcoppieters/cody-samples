@@ -47,9 +47,10 @@ cody.startWebApp(cody.server, {
     "controllers": require("./controllers/")
   },
   function() {
-    console.log("Loaded web app....");
-    cody.server.listen(3001);
-    console.log('Listening on port ' + cody.server.get('port'));
+    console.log("Loaded Cody Website....");
+    var portNr = 3000;
+    cody.server.listen(portNr);
+    console.log('Listening on port ' + portNr);
   }
 );
 

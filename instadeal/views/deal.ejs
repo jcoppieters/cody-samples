@@ -1,0 +1,90 @@
+<% include header.ejs %>
+    <div class="wrapper clearfix">
+        <article class="deal clearfix">
+          <h1><%= deal.title %></h1>
+          <div class="maindeal-nav clearfix">
+            <a href="#" class="alldeals"><%-render({name: 'show deals'})%></a>
+            <a href="#" class="prev"><%-render({name: 'previous deal'})%></a>
+            <a href="#" class="next"><%-render({name: 'next deal'})%></a>
+          </div>
+          <section class="maindeal rounded clearfix">
+            <div class="maindeal-info clearfix">
+              <figure class="maindeal-image"><img src="<%=static%>/img/<%=deal.image%>" alt=""></figure>
+              <div class="maindeal-description">
+                <h2><%-render({name: 'deal description title'})%></h2>
+                <p><%= deal.description %></p>
+                <a href="reserveer.html" class="btn reservation-btn"><%-render({name: 'reserve now'})%></a>
+              </div>
+
+            </div>
+            <div class="maindeal-attention clearfix">
+              <div class="maindeal-action">
+                <a href="reserveer.html" class="btn reservation-btn"><%-render({name: 'reserve now'})%></a>
+                <p><%-render({name: 'payment on spot'})%></p>
+              </div>
+              <div class="maindeal-price">
+                  <%-render({name: 'amount'})%>
+                  <br><span><%-render({name: 'currency'})%><%= deal.price %></span>
+              </div>
+              <div class="maindeal-savings clearfix">
+                <div class="normaal"><%-render({name: 'normal price'})%><br><span>€<%= deal.normal_price %></span></div>
+                <div class="korting"><%-render({name: 'discount'})%><br><span><%= deal.discount() %>%</span></div>
+                <div class="bespaar"><%-render({name: 'price'})%><br><span>€<%= deal.price %></span></div>
+              </div>
+              <div class="maindeal-time">
+                <%- render({name: 'deal still'}) %>
+                  <br><em class="maindeal-time-holder" data-time="<%= deal.date %>">
+                    <% include time-tags.ejs %>
+                  </em><br>
+                  <%-render({name: 'available'})%>
+              </div>
+              <div class="maindeal-share">
+                <em>
+                    <%-render({name: 'still'})%>
+                    <%= deal.total_remaining %>
+                    <%-render({name: 'deals'})%></em><br>
+                <strong><%-render({name: 'share with friends'})%></strong><br>
+                <div class="maindeal-links">
+                  <a href="#"><img src="<%=static%>/img/icon-facebook.png" alt="" width="75" height="20"></a>
+                  <a href="#"><img src="<%=static%>/img/icon-twitter.png" alt="" width="59" height="20"></a>
+                  <a href="#"><img src="<%=static%>/img/icon-email.png" alt="" width="58" height="20"></a>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="maindeal-contact rounded clearfix">
+            <div class="contact-data">
+              <h2><%-render({name: 'contact data title'})%></h2>
+              <p>Langestraat 19<br>8000 Brugge</p>
+              <p><strong>t: 050 33 82 59</strong></p>
+              <p><a href="mailto:info@karmeliet.be">info@karmeliet.be</a></p>
+              <p class="last"><a href="http://www.karmeliet.be">Website</a></p>
+            </div>
+            <figure class="contact-map">
+              <img src="<%=static%>/img/tmp-googlemap.jpg" alt="">
+            </figure>
+          </section>
+          <section class="location-info rounded">
+            <h2>De Karmeliet</h2>
+            <p>In het hartje van het historische Brugge streeft Geert Van Hecke naar gastronomische perfectie.</p>
+            <p>In het driesterrenrestaurant De Karmeliet kunt u de Belgische gastronomie ontdekken. Kies à la carte of geniet van een van de speciale menu's, zoals 'Het Vlakke Land' en 'Brugge die Scone'.</p>
+            <p>De Karmeliet is werkelijk een culinair hoogtepunt waar gastronomie, gezelligheid en sfeer zich tot een uniek en exclusief resultaat mengen.</p>
+          </section>
+        </article>
+
+        <% include deals-aside.ejs %>
+
+      </div>
+
+
+    </div> <!-- #main-container -->
+
+    <% include footer.ejs %>
+
+    <script>
+        $(function () {
+            setDynamicTimer(".maindeal-time-holder, .deal-time");
+        });
+    </script>
+  </body>
+</html>

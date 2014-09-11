@@ -1,7 +1,7 @@
 //
 // Johan Coppieters - jan 2013 - Cody CMS
 //
-// empty website for Cody CMS
+// website for Cody CMS
 //
 //
 
@@ -24,6 +24,7 @@ cody.server.use(expressSession({secret: 'a secret', cookie: { maxAge: 60*60*1000
 cody.server.use(bodyParser.urlencoded({ extended: true }));
 cody.server.use(multer());
 
+
 // startup a routing for all static content of cody (images, javascript, css)
 cody.server.get("/cody/static/*", function (req, res) {
     var fileserver = new cody.Static(req, res, "");
@@ -32,22 +33,22 @@ cody.server.get("/cody/static/*", function (req, res) {
 
 
 cody.startWebApp(cody.server, {
-    "name": "empty",
-    "mailFrom": "info@mysite.com",
-    "smtp": "smtpmailer.mysite.com",
+    "name": "bok",
+    "mailFrom": "info@cody-cms.org",
+    "smtp": "smtpmailer.howest.be",
     "version": "V0.1",
     "defaultlanguage": "en",
-    "hostnames" : "mysite.com,www.mysite.com,mysite.local",
+    "hostnames" : "bok.coppieters.be,bok.local,bok.bike,www.bok.bike",
     "dbuser": "cody",
     "dbpassword": "ydoc",
     "dbhost": "localhost",
-    "datapath": "/usr/local/data/empty",
-    "db": "empty",
+    "datapath": "/usr/local/data/bok",
+    "db": "bok",
     "controllers": require("./controllers/")
   },
   function() {
-    console.log("Loaded Empty web app....");
-    var portNr = 3001;
+    console.log("Loaded BOK web app....");
+    var portNr = 3002;
     cody.server.listen(portNr);
     console.log('Listening on port ' + portNr);
   }

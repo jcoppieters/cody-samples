@@ -1,0 +1,8 @@
+
+<ul class="l-tabs verkoper">
+  <li class="first <%= (path.domain === 'seller-deals') ? 'active' : '' %>"><a href="/<%=page.language%>/seller-deals">Deals</a></li>
+  <li class="<%= (path.domain === 'seller-reservations') ? 'active' : '' %>"><a href="/<%=page.language%>/seller-reservations">Reservaties</a></li>
+  <li class="<%= (path.domain === 'seller-account') ? 'active' : '' %>"><a href="/<%=page.language%>/seller-account">Mijn account</a></li>
+  <!-- last one had my-account as class -> make the li go right -->
+  <!-- perhaps get labels from page.parent.content ? -->
+</ul>

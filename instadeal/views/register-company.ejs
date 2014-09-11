@@ -1,0 +1,76 @@
+<% include header.ejs %>
+
+      <div class="registration-container clearfix">
+        <div class="wrapper">
+          <h1><%-render({name: 'register as seller'}) %></h1>
+          <form method="post" id="registrationsellerform" class="ticket-form clearfix">
+            <div class="column rounded">
+              <div class="form-item">
+                <label for="email"><%-render({name: 'email tag'})%></label>
+                <input type="email" value="" id="email">
+              </div>
+              <div class="form-item password-item">
+                <label for="password"><%-render({name: 'password tag'})%></label>
+                <input type="password" value="" id="password" class="showpassword">
+              </div>
+              <div class="form-item showpassword-item checkbox">
+                <input type="checkbox" id="showpassword" class="showpasswordcheckbox">
+                <label for="showpassword"><%-render({name: 'show password'})%></label>
+              </div>
+            </div>
+            <div class="column rounded last">
+              <div class="form-item conditions-item checkbox">
+                <input type="checkbox" value="Y" id="voorwaarden">
+                <label for="voorwaarden"><%-render({name: 'read policy'})%></label>
+              </div>
+              <div class="form-item">
+                <input type="submit" value="<%=strings['register']%>" class="btn">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    <article class="what-container">
+        <div class="wrapper">
+            <h1><%-render({name: 'what is instadeal?'})%></h1>
+            <%-render({name: 'what is instadeal - text 1'})%>
+            <div class="deal-ticket clearfix">
+                <a href="#">
+                    <img src="img/tmp-deal02.jpg" alt="" width="242" class="deal-image rounded">
+                    <div class="deal-text rounded">
+                        <div class="deal-time">Nog: 15min 12sec</div>
+                        <%-render({name: 'example title'})%>
+                        <div class="deal-info clearfix">
+                            <div class="deal-oldprice">€550</div>
+                            <div class="deal-newprice">€450</div>
+                            <div class="deal-view">Bekijk aanbieding</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <%-render({name: 'what is instadeal - text 2'})%>
+        </div>
+    </article>
+    <article class="how-container">
+        <div class="wrapper clearfix">
+            <h1><%-render({name: 'how does it work?'})%></h1>
+            <div class="column">
+                <div class="columncount">1</div>
+                <%-render({name: 'step 1'})%>
+            </div>
+            <div class="column">
+                <div class="columncount">2</div>
+                <%-render({name: 'step 2'})%>
+            </div>
+            <div class="column last">
+                <div class="columncount">3</div>
+                <%-render({name: 'step 3'})%>
+            </div>
+            <div class="howlinks">
+                <a href="./deals/" class="standardbtn"><%-render({name: 'show deals'})%></a>
+            </div>
+        </div>
+    </article>
+    </div> <!-- #main-container -->
+
+    <% include footer.ejs %>

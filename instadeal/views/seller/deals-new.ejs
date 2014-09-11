@@ -1,0 +1,64 @@
+<% var bodyClass = "loggedin"; %>
+<% include ../header.ejs %>
+
+    <% include nav.ejs %>
+
+    <div class="l-container l-newdeal clearfix">
+       <form method="post" action="/<%=page.language%>/seller-deals/save" enctype="multipart/form-data">
+          <h1><%-render({name: 'new deal'})%></h1>
+
+          <div class="l-block">
+            <div class="form-item">
+              <label for="title">Titel van de deal <span>(0/x karakters)</span>*</label>
+              <input type="text" value="<%=deal.title%>" id="title" name="title">
+            </div>
+          </div>
+
+          <div class="l-block">
+            <div class="form-item">
+              <label for="description">Beschrijving van uw deal <span>(0/x karakters)</span>*</label>
+              <textarea id="description" name="description" rows="5"><%=deal.description%></textarea>
+            </div>
+          </div>
+
+          <div class="l-block">
+            <div class="form-item clearfix">
+              <div class="label">Afbeelding bij de deal*</div>
+              <% if (deal.image_ext !== "") { %><img src="<%=dynamic%>/deals/<%=deal.id%>.<%=deal.image_ext%>" alt="" class="l-dealimage"><% } %>
+              <div class="l-deal-imageactions" <% if (deal.image_ext === "") { %>style="float: left"<% } %>>
+                <div class="select-image l-link">
+                  <input type="file" name="fileToUpload">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="l-block clearfix">
+            <div class="label">Prijs van de deal</div>
+            <div class="form-item price">
+              <label for="normal_price">Originele prijs*</label>
+              <input type="text" value="<%=deal.normal_price%>" id="normal_price" name="normal_price" placeholder="€">
+            </div>
+            <div class="form-item price">
+              <label for="price">Prijs van de deal*</label>
+              <input type="text" value="<%=deal.price%>" id="price" name="price" placeholder="€">
+            </div>
+          </div>
+
+          <div class="l-actions clearfix">
+            <input type="hidden" value="<%=deal.id%>" name="id" id="id">
+            <input type="submit" value="Bewaar deal" id="savedeal" class="l-btn l-subaction">
+            <a href="/<%=page.language%>/seller-deals" class="cancel-link">Cancel</a>
+          </div>
+
+        </form>
+      </div>
+
+    </div> <!-- #main -->
+</div> <!-- #main-container -->
+
+
+<% var noDialog = true; %>
+<% include ../footer.ejs %>
+
+</body></html>

@@ -1,0 +1,113 @@
+<% var bodyClass = "loggedin"; %>
+<% include ../header.ejs %>
+
+<% include nav.ejs %>
+
+<div class="l-container l-newdeal clearfix">
+  <form method="post" action="/<%=page.language%>/seller-deals/<%= (deal.slots.length > 0) ? 'management' : 'activation' %>">
+    <h1><%-strings[activationTitle]%></h1>
+
+    <div class="l-block clearfix">
+      <div class="l-description">
+        <%= deal.description %>
+      </div>
+      <div class="l-deal">
+        <img src="<%= dynamic %>/deals/<%= deal.deal_template_id %>.<%= deal.image_ext %>" alt="" class="l-dealimage">
+        <div class="l-dealdata">
+          <p><%= deal.title %></p>
+          <p>12sec [todo]</p>
+          <p class="price">Normaal: €<%= deal.normal_price %></p>
+          <p class="price">Deal: €<%= deal.price %></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="l-block">
+      <div class="form-item date">
+        <label for="dealdate">Datum van de aanbieding <span>(Aanbieding wordt 4 dagen voor aanvang zichtbaar op de website)</span></label>
+        <input type="text" value="<%=formatDate(deal.date)%>" id="dealdate" name="date">
+      </div>
+    </div>
+
+    <div class="l-block">
+      <div class="label">Reservatiemomenten en aantal plaatsen voor deze deal</div>
+      <table class="reservationmoments">
+        <tr>
+          <th>Van</th>
+          <th>Tot</th>
+          <th class="last">Aantal</th>
+        </tr>
+        <% var nr = 1; %>
+        <% for (var iS in deal.slots) { var S = deal.slots[iS]; %>
+          <tr class="input">
+            <td><input type="hidden" name="slot<%=nr %>" value="<%= S.id %>">
+                <input type="text" value="<%= S.start_time %>" name="start_time<%=nr %>" placeholder="__:__"></td>
+            <td><input type="text" value="<%= S.end_time %>" name="end_time<%= nr %>" placeholder="__:__"></td>
+            <td class="last"><input type="text" value="<%= S.quantity %>" name="quantity<%=nr %>"></td>
+          </tr>
+        <% nr++; %>
+        <% } %>
+        <tr class="input">
+          <td><input type="hidden" name="slot<%=nr %>" value="0">
+              <input type="text" value="" name="start_time<%= nr %>" placeholder="__:__"></td>
+          <td><input type="text" value="" name="end_time<%= nr %>" placeholder="__:__"></td>
+          <td class="last"><input type="text" value="" name="quantity<%= nr %>"></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="l-actions clearfix">
+      <input type="hidden" value="<%= deal.deal_template_id %>" name="deal_template_id"  id="deal_template_id">
+      <input type="hidden" value="<%= deal.id %>" name="deal_id" id="deal_id">
+      <% if (deal.slots.length === 0) { %>
+         <input type="submit" value="Activeer deal" id="activatedeal" class="l-btn l-mainaction">
+      <% } else { %>
+         <input type="submit" value="Bewaar deal" id="savedeal" class="l-btn l-subaction">
+      <% } %>
+      <a href="/<%= page.language %>/seller-deals" class="cancel-link">Cancel</a>
+    </div>
+  </form>
+</div>
+
+</div> <!-- #main -->
+</div> <!-- #main-container -->
+
+    <script>
+      function addMoment() {
+        var nr = $("table.reservationmoments tr.input").length + 1;
+        $("table.reservationmoments tr:last").after(
+            "<tr class='input'><td><input type='hidden' name='slot" + nr + "' value='0'>" +
+                "<input type='text' value='' name='start_time"+nr+"' placeholder='__:__'></td>" +
+                "<td><input type='text' value='' name='end_time"+nr+"' placeholder='__:__'></td>" +
+                "<td class='last'><input type='text' value='' name='quantity"+nr+"'></td></tr>"
+        );
+      }
+
+      function allUsed() {
+        function concat(elems) {
+          var str = "";
+          elems.each(function() { str += $(this).val(); });
+          return str;
+        }
+        var empty = true;
+        $("table.reservationmoments tr.input").each(function() {
+          if (concat($(this).find("input[type=text]")) === "") empty = false;
+        });
+        return empty;
+      }
+
+
+      $(document).ready(function() {
+        $( document ).on( "change", "table.reservationmoments input[type=text]", function() {
+          if (allUsed()) {
+            addMoment();
+          }
+        });
+      });
+
+    </script>
+
+<% var noDialog = true; %>
+<% include ../footer.ejs %>
+
+</body></html>

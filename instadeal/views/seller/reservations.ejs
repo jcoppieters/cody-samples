@@ -1,0 +1,154 @@
+<% var bodyClass = "loggedin"; %>
+<% include ../header.ejs %>
+
+    <% include nav.ejs %>
+
+<div class="l-container l-reservations clearfix">
+  <h1>Reservaties</h1>
+  <aside class="l-side">
+    <form method="post" action="" id="showdealsform" class="l-show-deals">
+      <div class="l-block">
+        <div class="form-item">
+          <label for="datum">Toon (lopende) deals</label>
+          <select id="datum" name="datum">
+            <option value="20130901">Vandaag - 01/09/2013</option>
+            <option value="20130902">Morgen - 02/09/2013</option>
+            <option value="20130903">03/09/2013</option>
+          </select>
+        </div>
+        <div class="form-group clearfix">
+          <div class="form-item date">
+            <label for="dealvan">Van</label>
+            <input type="text" value="" id="dealvan">
+          </div>
+          <div class="form-item date last">
+            <label for="dealtot">Tot</label>
+            <input type="text" value="" id="dealtot">
+          </div>
+        </div>
+      </div>
+      <div class="l-deal-showaction">
+        <input type="submit" value="Toon" class="l-btn">
+      </div>
+    </form>
+  </aside>
+  <div class="l-main">
+    <div class="l-reservation">
+      <h2><a href="#">De titel van een verkoop</a></h2>
+      <div class="l-datetime">__/__/____ - 10:30</div>
+      <div class="l-block">
+        <div class="l-docs-actions">
+          <a href="#" class="l-btn printlink">Print</a>
+          <a href="#" class="l-btn pdf">Opslaan als pdf</a>
+        </div>
+        <table class="reservation-table">
+          <tr>
+            <th class="center">Van</th>
+            <th class="center">Tot</th>
+            <th>Naam</th>
+            <th>Aantal</th>
+            <th class="actions">&nbsp;</th>
+          </tr>
+          <tr>
+            <td class="center">__:__</td>
+            <td class="center">__:__</td>
+            <td>Voornaam achternaam</td>
+            <td>&nbsp;</td>
+            <td class="actions"><a href="#">Niet komen opdagen</a></td>
+          </tr>
+          <tr>
+            <td class="center">__:__</td>
+            <td class="center">__:__</td>
+            <td>Voornaam achternaam</td>
+            <td>&nbsp;</td>
+            <td class="actions"><a href="#">Niet komen opdagen</a></td>
+          </tr>
+          <tr>
+            <td class="center">__:__</td>
+            <td class="center">__:__</td>
+            <td>Voornaam achternaam</td>
+            <td>&nbsp;</td>
+            <td class="actions"><a href="#">Niet komen opdagen</a></td>
+          </tr>
+          <tr>
+            <td class="center">__:__</td>
+            <td class="center">__:__</td>
+            <td>Voornaam achternaam</td>
+            <td>&nbsp;</td>
+            <td class="actions"><a href="#">Niet komen opdagen</a></td>
+          </tr>
+          <tr>
+            <td class="center">__:__</td>
+            <td class="center">__:__</td>
+            <td>Voornaam achternaam</td>
+            <td>&nbsp;</td>
+            <td class="actions"><a href="#">Niet komen opdagen</a></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="l-reservation">
+      <h2><a href="#">De titel van een verkoop</a></h2>
+      <div class="l-datetime">__/__/____ - 10:30</div>
+      <div class="l-block">
+        <div class="l-docs-actions">
+          <a href="#" class="l-btn printlink">Print</a>
+          <a href="#" class="l-btn pdf">Opslaan als pdf</a>
+        </div>
+        <table class="reservation-table">
+          <tr>
+            <th class="center">Van</th>
+            <th class="center">Tot</th>
+            <th>Naam</th>
+            <th>Aantal</th>
+            <th class="actions">&nbsp;</th>
+          </tr>
+          <tr>
+            <td class="center">__:__</td>
+            <td class="center">__:__</td>
+            <td>Voornaam achternaam</td>
+            <td>&nbsp;</td>
+            <td class="actions"><a href="#">Niet komen opdagen</a></td>
+          </tr>
+          <tr>
+            <td class="center">__:__</td>
+            <td class="center">__:__</td>
+            <td>Voornaam achternaam</td>
+            <td>&nbsp;</td>
+            <td class="actions"><a href="#">Niet komen opdagen</a></td>
+          </tr>
+          <tr>
+            <td class="center">__:__</td>
+            <td class="center">__:__</td>
+            <td>Voornaam achternaam</td>
+            <td>&nbsp;</td>
+            <td class="actions"><a href="#">Niet komen opdagen</a></td>
+          </tr>
+          <tr>
+            <td class="center">__:__</td>
+            <td class="center">__:__</td>
+            <td>Voornaam achternaam</td>
+            <td>&nbsp;</td>
+            <td class="actions"><a href="#">Niet komen opdagen</a></td>
+          </tr>
+          <tr>
+            <td class="center">__:__</td>
+            <td class="center">__:__</td>
+            <td>Voornaam achternaam</td>
+            <td>&nbsp;</td>
+            <td class="actions"><a href="#">Niet komen opdagen</a></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div> <!-- #main -->
+</div> <!-- #main-container -->
+
+
+<% var noDialog = true; %>
+<% include ../footer.ejs %>
+
+</body></html>

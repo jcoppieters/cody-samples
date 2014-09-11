@@ -1,0 +1,10 @@
+
+<nav>
+    <div id="navicon">MENU</div>
+    <ul class="header-nav">
+        <% page.root.children.forEach(function (subPage) { %>
+            <li><a href="/<%=subPage.url%>" class="<%=(subPage.url == page.url) ? 'active' : ''%>"><%=subPage.title%></a></li>
+        <% }); %>
+        <li class="login"><a href="/login" id="loginlink">Login</a></li>
+    </ul>
+</nav>

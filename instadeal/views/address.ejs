@@ -1,0 +1,11 @@
+<% var name    = page.root.getContent('name').render(controller);
+   var address = page.root.getContent('address').render(controller);
+   var contact = page.root.getContent('contact').render(controller);
+   var btw     = page.root.getContent('btw').render(controller); %>
+
+<address>
+    <strong><%= name %></strong><br>
+    <%= address %><br>
+    <%- contact %><br>
+    <%= btw %>
+</address>

@@ -32,7 +32,7 @@ cody.server.get("/cody/static/*", function (req, res) {
 
 
 cody.startWebApp(cody.server, {
-    "name": "empty",
+    "name": "grader",
     "mailFrom": "info@mysite.com",
     "smtp": "smtpmailer.mysite.com",
     "version": "V0.1",
@@ -41,13 +41,13 @@ cody.startWebApp(cody.server, {
     "dbuser": "cody",
     "dbpassword": "ydoc",
     "dbhost": "localhost",
-    "datapath": "/usr/local/data/empty",
-    "db": "empty",
+    "datapath": "/usr/local/data/grader",
+    "db": "grader",
     "controllers": require("./controllers/")
   },
   function() {
-    console.log("Loaded Empty web app....");
-    var portNr = 3001;
+    console.log("Loaded Grader web app....");
+    var portNr = 3004;
     cody.server.listen(portNr);
     console.log('Listening on port ' + portNr);
   }

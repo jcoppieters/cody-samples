@@ -1,0 +1,88 @@
+<% include header.ejs %>
+    <div class="wrapper clearfix">
+        <form action="./deals" method="get" id="deal-searchform" class="main-top">
+          <div class="form-item">
+            <label for="regio">Regio</label>
+            <select id="regio" name="regio">
+              <option value="Gent">Gent</option>
+            </select>
+          </div>
+          <div class="form-item">
+            <label for="date"><%= render({name: "date"}) %></label>
+            <select id="date" name="date">
+                <%- optionListF(dates,
+                                date_format,
+                                function (date) { return date.format(); },
+                                function (date) { return date.listFormat(); }) %>
+            </select>
+          </div>
+          <div class="form-item last">
+            <label for="category">Categorie</label>
+            <select id="category" name="category">
+              <option value=""><%-strings['all']%></option>
+              <%- optionListF(categories,
+                              category_id,
+                              function (cat) { return cat.id; },
+                              function (cat) { return cat.name; }) %>
+            </select>
+          </div>
+        </form>
+
+
+        <div class="intro">
+            <div class="introtext">
+                <p>
+                  <%- render({name: 'intro text'}) %>
+                  <a href="/<%=page.language%>/how"><%- render({name: 'learn more'}) %></a>
+                </p>
+            </div>
+            <a href="/<%=page.language%>/how"><%- render({name: 'register'}) %></a>
+        </div>
+
+
+        <div class="deals clearfix">
+
+          <% deals.forEach(function (deal) { %>
+
+          <div class="deal-ticket clearfix" data-time="<%= deal.date %>">
+            <a href="./deal/show/<%=deal.id%>">
+            <img src="<%=static%>/img/<%=deal.image%>" alt="" width="242" class="deal-image rounded">
+            <div class="deal-text rounded">
+              <div class="deal-time">
+                  <% include time-tags.ejs %>
+              </div>
+              <p><%= deal.title %></p>
+              <div class="deal-info clearfix">
+                <div class="deal-oldprice">€<%= deal.normal_price %></div>
+                <div class="deal-newprice">€<%= deal.price %></div>
+                <div class="deal-view"><%- render({name: 'view deal'}) %> </div>
+              </div>
+            </div>
+            </a>
+          </div>
+
+          <% }); %>
+
+
+          <div class="deals-more">
+            <p class="deals-more-text">Nog 14 andere verkopen</p>
+            <p><a href="#" id="moredealslink" class="standardbtn">Laad meer verkopen</a></p>
+          </div>
+        </div>
+      </div> <!-- #main -->
+    </div> <!-- #main-container -->
+
+
+    <% include footer.ejs %>
+
+    <script>
+        $(function () {
+            setDynamicTimer(".deal-ticket");
+            $('#deal-searchform').change(function () {
+                $(this).submit();
+            });
+        });
+    </script>
+
+  </body>
+</html>

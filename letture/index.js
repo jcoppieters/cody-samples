@@ -1,7 +1,7 @@
 //
 // Johan Coppieters - jan 2013 - Cody CMS
 //
-// website for Cody CMS
+// empty website for Cody CMS
 //
 //
 
@@ -32,23 +32,24 @@ cody.server.get("/cody/static/*", function (req, res) {
 
 
 cody.startWebApp(cody.server, {
-    "name": "codyweb",
-    "mailFrom": "info@cody-cms.org",
-    "smtp": "smtpmailer.howest.be",
+    "name": "letture",
+    "mailFrom": "info@mysite.com",
+    "smtp": "smtpmailer.mysite.com",
     "version": "V0.1",
     "defaultlanguage": "en",
-    "hostnames" : "cody.local,vpn.cody-cms.org,howest.cody-cms.org,www.cody-cms.org,cody-cms.org",
+    "hostnames" : "mysite.com,www.mysite.com,mysite.local",
     "dbuser": "cody",
     "dbpassword": "ydoc",
     "dbhost": "localhost",
-    "datapath": "/usr/local/data/codyweb",
-    "db": "codyweb",
+    "datapath": "/usr/local/data/letture",
+    "db": "letture",
     "controllers": require("./controllers/")
   },
   function() {
-    console.log("Loaded web app....");
-    cody.server.listen(3001);
-    console.log('Listening on port ' + cody.server.get('port'));
+    console.log("Loaded Empty web app....");
+    var portNr = 3007;
+    cody.server.listen(portNr);
+    console.log('Listening on port ' + portNr);
   }
 );
 

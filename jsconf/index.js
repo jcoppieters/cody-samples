@@ -32,22 +32,22 @@ cody.server.get("/cody/static/*", function (req, res) {
 
 
 cody.startWebApp(cody.server, {
-    "name": "empty",
+    "name": "jsconf",
     "mailFrom": "info@mysite.com",
     "smtp": "smtpmailer.mysite.com",
     "version": "V0.1",
     "defaultlanguage": "en",
-    "hostnames" : "mysite.com,www.mysite.com,mysite.local",
+    "hostnames" : "jsconf.be,www.jsconf.be,vpn.jsconf.be,jsconf.local",
     "dbuser": "cody",
     "dbpassword": "ydoc",
     "dbhost": "localhost",
-    "datapath": "/usr/local/data/empty",
-    "db": "empty",
+    "datapath": "/usr/local/data/jsconf",
+    "db": "jsconf",
     "controllers": require("./controllers/")
   },
   function() {
     console.log("Loaded Empty web app....");
-    var portNr = 3001;
+    var portNr = 3006;
     cody.server.listen(portNr);
     console.log('Listening on port ' + portNr);
   }

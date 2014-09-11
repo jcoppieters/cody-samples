@@ -1,0 +1,198 @@
+<% var bodyClass = "loggedin"; %>
+<% include ../header.ejs %>
+
+    <% include nav.ejs %>
+
+<div class="l-container clearfix">
+  <div class="subnav clearfix">
+    <a href="#" class="first active" id="btnGegevens">Bedrijfsgegevens</a>
+    <a href="#" class="last" id="btnFacturatie">Facturatiegegevens</a>
+  </div>
+
+  <form method="post" action="#">
+
+    <div id="gegevens" class="l-main">
+      <h1>Beschrijving van uw bedrijf</h1>
+      <p class="l-description">(Deze gegevens zijn zichtbaar bij een deal)</p>
+      <div class="l-block">
+        <div class="form-item">
+          <label for="bedrijfsnaam">Naam van uw bedrijf <span>(0/x karakters)</span>*</label>
+          <input type="text" value="" id="bedrijfsnaam" name="bedrijsfnaam">
+        </div>
+      </div>
+      <div class="l-block">
+        <div class="form-item">
+          <label for="bedrijfssector">Sector van uw bedrijf* <span>(selecteer de categorie waaronder u gevonden wil worden)</span></label>
+          <select id="bedrijfssector">
+            <option value="entertainment">Entertainment</option>
+            <option value="beauty &amp; wellness">Beauty &amp; Wellness</option>
+            <option value="horeca">Horeca</option>
+          </select>
+        </div>
+      </div>
+      <div class="l-block">
+        <div class="form-item">
+          <label for="bedrijfsbeschrijving">Beschrijving van uw bedrijf <span>(0/x karakters)</span>*</label>
+          <textarea id="bedrijfsbeschrijving" rows="5"></textarea>
+        </div>
+      </div>
+      <div class="l-block">
+        <div class="form-item">
+          <label>Standaard afbeelding bij de aanbieding <span>(Deze afbeelding kan je aanpassen per deal)</span></label>
+          <div class="select-image l-link">
+            <a href="#"><span>Selecteer een afbeelding van uw computer</span> (jpg/png)</a>
+            <!--<img src="" alt="" width="50" height="50">-->
+          </div>
+        </div>
+      </div>
+      <h1>Contactgegevens van uw bedrijf</h1>
+      <p class="l-description">(Deze gegevens zijn zichtbaar bij een deal)</p>
+      <div class="l-block clearfix">
+        <div class="form-item form-straat">
+          <label for="straatnaam">Straatnaam*</label>
+          <input type="text" value="" id="straatnaam" name="straatnaam">
+        </div>
+        <div class="form-item form-nummer">
+          <label for="straatnummer">Nr*</label>
+          <input type="text" value="" id="straatnummer" name="straatnummer">
+        </div>
+        <div class="form-item form-postcode">
+          <label for="postcode">Postcode*</label>
+          <input type="text" value="" id="postcode" name="postcode">
+        </div>
+        <div class="form-item form-gemeente">
+          <label for="gemeente">Gemeente*</label>
+          <input type="text" value="" id="gemeente" name="gemeente">
+        </div>
+        <div class="form-item">
+          <label for="tel">Tel.nr.*</label>
+          <input type="text" value="" id="tel" name="tel">
+        </div>
+      </div>
+      <div class="l-block">
+        <div class="form-item">
+          <label for="email">E-mailadres*</label>
+          <input type="email" value="" id="email" name="email">
+        </div>
+        <div class="form-item">
+          <label for="website">Website</label>
+          <input type="text" value="" id="website" name="website">
+        </div>
+      </div>
+      <h1>Social media van uw bedrijf</h1>
+      <p class="l-description">(Deze gegevens zijn zichtbaar bij een deal)</p>
+      <div class="l-block">
+        <p>Log in met jouw Facebook- en Twitteraacount. Jouw deals zullen dan automatisch ook daar gepost worden.</p>
+        <div class="socialmedia-link">
+          Link uw Facebookpagina<br>
+          <a href="#">Login</a>
+        </div>
+        <div class="socialmeida-link">
+          Link uw Twitterpagina<br>
+          <a href="#">Login</a>
+        </div>
+      </div>
+      <div class="l-actions">
+        <input type="submit" value="Bewaar" class="l-btn l-mainaction">
+      </div>
+  </div>
+
+  <div id="facturatie" class="l-main">
+    <h1>Financiële gegevens</h1>
+    <p class="l-description">(Deze gegevens worden enkel gebruikt voor uw factuur en zijn dus niet zichtbaar)</p>
+    <div class="l-block">
+      <div class="form-item">
+        <label for="bedrijfsnaam">Naam van vennootschap*</label>
+        <input type="text" value="" id="bedrijfsnaam" name="bedrijsfnaam">
+      </div>
+      <div class="form-item">
+        <label for="btw">BTW.nr*</label>
+        <input type="text" value="" id="btw" name="btw">
+      </div>
+    </div>
+    <div class="l-block clearfix">
+      <div class="form-item checkbox">
+        <input type="checkbox" id="copycompanydata">
+        <label for="copycompanydata">Facturatiegegevens zijn dezelfde als de bedrijfsgegevens</label>
+      </div>
+      <div class="form-item form-straat">
+        <label for="fstraatnaam">Straatnaam*</label>
+        <input type="text" value="" id="fstraatnaam" name="fstraatnaam">
+      </div>
+      <div class="form-item form-nummer">
+        <label for="fstraatnummer">Nr*</label>
+        <input type="text" value="" id="fstraatnummer" name="fstraatnummer">
+      </div>
+      <div class="form-item form-postcode">
+        <label for="fpostcode">Postcode*</label>
+        <input type="text" value="" id="fpostcode" name="fpostcode">
+      </div>
+      <div class="form-item form-gemeente">
+        <label for="fgemeente">Gemeente*</label>
+        <input type="text" value="" id="fgemeente" name="fgemeente">
+      </div>
+    </div>
+    <h1>Facturen mogen verzonden worden naar</h1>
+    <div class="l-block">
+      <div class="form-item">
+        <label for="femail">E-mailadres*</label>
+        <input type="email" value="" id="femail" name="femail">
+      </div>
+    </div>
+    <div class="l-actions">
+      <input type="submit" value="Bewaar" class="l-btn l-mainaction">
+    </div>
+  </div>
+
+  </form>
+
+
+  <aside class="l-side">
+    <div class="l-block l-complete">
+      <h2>Compleet profiel</h2>
+      <div id="progressbar"><div style="width:80%;"></div></div>
+    </div>
+    <div class="login-data">
+      <h2>Logingegevens</h2>
+      <p class="l-description">(niet zichtbaar bij de deal)</p>
+      <div class="l-block">
+        <p><strong>E-mailadres</strong><br>mark@karmeliet.be</p>
+        <p><strong>Wachtwoord</strong><br>&bull;&bull;&bull;&bull;&bull;&bull;</p>
+        <a href="#" id="changeloginlink">Aanpassen</a>
+      </div>
+    </div>
+  </aside>
+  <div class="cancel-block">
+    <h2>Deze account stopzetten</h2>
+    <p>(Alle gegevens gaan verloren)</p>
+    <div class="l-block l-cancelaccount">
+      <a href="#">Verwijder deze account</a>
+    </div>
+  </div>
+</div>
+
+</div> <!-- #main -->
+</div> <!-- #main-container -->
+
+<script>
+  $(document).ready( function() {
+    $("#facturatie").hide();
+
+    $("#btnFacturatie").click(function() {
+      $("#facturatie").show();
+      $("#gegevens").hide();
+    });
+
+    $("#btnGegevens").click(function() {
+      $("#facturatie").hide();
+      $("#gegevens").show();
+    });
+  });
+
+</script>
+
+
+<% var noDialog = true; %>
+<% include ../footer.ejs %>
+
+</body></html>

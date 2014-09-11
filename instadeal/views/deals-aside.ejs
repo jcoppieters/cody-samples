@@ -1,0 +1,27 @@
+<aside>
+<% deals.forEach(function (deal) { %>
+
+    <div class="deal-ticket clearfix">
+        <a href="./<%=deal.id%>">
+            <img src="<%=static%>/img/<%=deal.image%>" alt="" width="242" class="deal-image rounded">
+            <div class="deal-text rounded">
+                <div class="deal-time" data-time="<%= deal.date%>">
+                    <%- render({name: 'still'})%>:
+                    <span class="day-val"></span><span class="time-tag day-tag"><%-render({name: 'day tag'})%></span>
+                    <span class="days-val"></span><span class="time-tag days-tag"><%-render({name: 'days tag'})%></span>
+                    <span class="hour-val"></span><span class="time-tag hour-tag"><%-render({name: 'hour tag'})%></span>
+                    <span class="min-val"></span><span class="time-tag min-tag"><%-render({name: 'minute tag'})%></span>
+                    <span class="sec-val"></span><span class="time-tag sec-tag"><%-render({name: 'second tag'})%></span>
+                </div>
+                <p><%= deal.title %></p>
+                <div class="deal-info clearfix">
+                    <div class="deal-oldprice"><%-render({name: 'currency'})%> <%=deal.normal_price%></div>
+                    <div class="deal-newprice"><%-render({name: 'currency'})%> <%=deal.price%></div>
+                    <div class="deal-view"><%-render({name: 'show deal'})%></div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+<% }); %>
+</aside>
