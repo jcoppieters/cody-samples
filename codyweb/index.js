@@ -5,10 +5,24 @@
 //
 //
 
-var express = require('express');
 var cody = require('cody');
+var express = cody.express;
+var fs = cody.fs;
+var mysql = cody.mysql;
+
+var ejs = cody.ejs;
 
 cody.server = express();
+var bodyParser = cody.bodyParser;
+var expressSession = cody.expressSession;
+var multer = cody.multer;
+
+
+// use the new 4.x middleware
+cody.server.use(bodyParser());
+cody.server.use(expressSession({secret: 'a secret', cookie: { maxAge: 60*60*1000 }}));
+cody.server.use(bodyParser.urlencoded({ extended: true }));
+cody.server.use(multer());
 
 
 // startup a routing for all static content of cody (images, javascript, css)
