@@ -1,7 +1,7 @@
 //
 // Johan Coppieters - jan 2013 - Cody CMS
 //
-// website
+// website for Cody CMS
 //
 //
 
@@ -33,7 +33,7 @@ cody.startWebApp(cody.server, {
     "controllers": require("./controllers/")
   },
   function() {
-    console.log("Loaded all apps....");
+    console.log("Loaded web app....");
     cody.server.listen(3001);
     console.log('Listening on port ' + cody.server.get('port'));
   }
