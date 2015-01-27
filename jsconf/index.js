@@ -37,7 +37,7 @@ cody.startWebApp(cody.server, {
     "smtp": "smtpmailer.mysite.com",
     "version": "V0.1",
     "defaultlanguage": "en",
-    "hostnames" : "jsconf.be,www.jsconf.be,vpn.jsconf.be,jsconf.local",
+    "hostnames" : "jsconf.be,www.jsconf.be,vpn.jsconf.be,jsconf.local,localhost",
     "dbuser": "cody",
     "dbpassword": "ydoc",
     "dbhost": "localhost",

@@ -4,8 +4,7 @@
 //
 console.log("loading " + module.id);
 
-var mysql = require("mysql");
-var cody = require("../../cody/index.js");
+var cody = require("cody");
 
 /*
 create table wall(

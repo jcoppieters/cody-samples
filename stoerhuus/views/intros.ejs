@@ -10,6 +10,7 @@
 <% include header.ejs %>
 
 <body class="page">
+ <div id="wrapper">
   <% include menu-top %>
 
 
@@ -32,13 +33,13 @@
 
           <%- render({page: CP, intro: 'Y' }) %>
 
-          <a href="/<%=CP.url%>"><%= CP.title %></a>
+          <a href="/<%=CP.url%>">Lees meer</a>
         </article>
       <% } %>
     </section>
   </div>
 
   <% include footer.ejs %>
-
+ </div>
 </body>
 </html>

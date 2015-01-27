@@ -29,11 +29,12 @@ section { max-width: 908px; width: 90%; margin: 0 auto; padding: 0; border: 0; b
 section img { max-width: 800px; box-shadow: darkgrey 3px 3px 3px; margin: 8px; }
 
 label { display: inline-block; width: 95px; }
+label.radio { width: 240px }
 button { display: inline-block; padding: 10px 20px; border-radius: 4px; border: 0; font-size: 16px; color: #fff; background: #53b478; font-weight: bold; }
 
 input[type=text] { width: 400px; font-size: 14px; border-radius: 4px; height: 24px; border: darkgrey 1px solid }
 form div { margin: 7px 0 15px 0; border: none; padding: 0 }
-div.radios { display: inline-block; }
+div.radios label { display: inline-block; width: 70%}
 div.radios label { width: inherit; margin-left: 3px; margin-right: 20px }
 #action_buttons { padding-left: 107px }
 fieldset { border: none }
