@@ -33,9 +33,9 @@ cody.server.get("/cody/static/*", function (req, res) {
 
 cody.startWebApp(cody.server, {
     "name": "jsconf",
-    "mailFrom": "info@mysite.com",
-    "smtp": "smtpmailer.mysite.com",
-    "version": "V0.1",
+    "mailFrom": "website@cody-cms.org",
+    "smtpoptions": { host: "uit.telenet.be", port: 25 },
+    "version": "V1.2",
     "defaultlanguage": "en",
     "hostnames" : "jsconf.be,www.jsconf.be,vpn.jsconf.be,jsconf.local,localhost",
     "dbuser": "cody",

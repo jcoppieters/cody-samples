@@ -1,0 +1,11 @@
+
+/* Regel specifiek voor retina display monitors, wordt volgend semester uitgelegd */
+@media
+(-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+
+
+
+
+}
+

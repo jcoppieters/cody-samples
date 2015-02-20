@@ -38,7 +38,7 @@ cody.startWebApp(cody.server, {
     "smtp": "smtpmailer.howest.be",
     "version": "V0.1",
     "defaultlanguage": "en",
-    "hostnames" : "cody.local,vpn.cody-cms.org,howest.cody-cms.org,www.cody-cms.org,cody-cms.org",
+    "hostnames" : "localhost,cody.local,vpn.cody-cms.org,howest.cody-cms.org,www.cody-cms.org,cody-cms.org",
     "dbuser": "cody",
     "dbpassword": "ydoc",
     "dbhost": "localhost",

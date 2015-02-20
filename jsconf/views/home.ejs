@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="<%=page.language%>">
+<!--<![endif]-->
+
+
+
+<% include head.ejs %>
+
+<body id="page<%= page.itemId %>">
+
+  <header>
+    <%- render({intro: 'Y'}) %>
+  </header>
+
+  <nav class="navbar">
+      <ul class="nav navbar-nav">
+        <% for (var i in page.children) { %>
+          <li><a href="#<%= page.children[i].link %>"><%= page.children[i].link %></a></li>
+        <% } %>
+        <li><a href="mailto:info@jsconf.be">Contact</a></li>
+      </ul>
+  </nav>
+
+  <main>
+
+    <% if (typeof submitted != "undefined") { %>
+     <section class="thankyou">
+        <%if (page.language == "nl") { %>
+          <h2>Dank U!</h2>
+          <div>
+            <p>We houden U op de hoogte en sturen je later nog een email ter bevestiging.</p>
+            <p>We zien je zowiezo op 33 maart in Howest te Brugge.</p>
+            <p>Vergeet niet te betalen op rekening <strong>BE22 0012 6531 1547, BIC: GEBABEBB</strong> van jsconf.be</p>
+
+          </div>
+
+        <% } else { %>
+          <h2>Thank you!</h2>
+          <div>
+            <p>We will keep you informed and send you an email as confirmation in the next coming days.</p>
+            <p>See you on April the 2nd at Howest Brugge.</p>
+            <p>Don't forget to pay to <strong>BE22 0012 6531 1547, BIC: GEBABEBB</strong> of jsconf.be</p>
+          </div>
+        <% } %>
+     </section>
+    <% } %>
+
+
+    <% for (var i in page.children) {
+      var subpage = page.children[i];
+      var cols = (subpage.link === 'speakers') ? '6' : '4';
+      var adorn = (subpage.link === 'schedule') ? ' <i class="fa fa-calendar"></i> ' : ''; %>
+
+        <section class="<%= subpage.link %>">
+          <div class="container">
+            <h2><a id="<%= subpage.link %>"><%- adorn + subpage.title + adorn %></a></h2>
+            <% for (var j in subpage.content) {
+                if (subpage.content[j].kind === 'S') { %>
+                  <%- subpage.content[j].data %>
+                <% } else { %>
+                  <article class="col-md-<%=cols%>">
+                    <%- subpage.content[j].render() %>
+                  </article>
+                <% }
+            } %>
+          </div>
+
+          <% if (i == 0) { %>
+            <a class="calltoaction" href="#tickets">Register now</a>
+          <% } %>
+        </section>
+
+    <% } %>
+
+    <section id="tickets">
+       <div class="container">
+         <h2>Register now</h2>
+
+         <div class="col-md-6">
+           <%- render({intro: 'N', kind: 'M'}) %>
+         </div>
+
+         <div class="col-md-6">
+           <%- render({intro: 'N', kind: 'T'}) %>
+         </div>
+       </div>
+    </section>
+
+    <section class="descriptive">
+        <div class="container">
+            <h2>The power of Javascript</h2>
+            <p>Following last year’s success, 2015 brings a even more Javascript goodness. In this second edition of the Javascript Conference we now have a <strong>client</strong> and a <strong>server track</strong>, as well as many topics on the <strong>Internet of Things</strong>.</p>
+
+            <p>This year we offer both <strong>hands-on workshops</strong> as well as <strong>speaker sessions</strong>,  enabling us to go in-depth as well as broadsighted in one go.</p>
+
+            <p>The conference will be held at <strong>HOWEST</strong>, Rijselstraat 5 8000 <strong>Bruges</strong> on April 2nd 2015. All sessions and workshops will be hosted  in English</p>
+        </div>
+    </section>
+
+  </main>
+
+
+  <% include foot.ejs %>
+
+</body>
+</html>
