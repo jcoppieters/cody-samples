@@ -4,7 +4,7 @@
 //
 console.log("loading " + module.id);
 
-var cody = require("cody");
+var cody = require("../../cody/index.js");
 
 
 function ContactController(context) {

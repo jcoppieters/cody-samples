@@ -41,22 +41,21 @@ header h1 span {
     display: block;
 }
 header h2 {
+    margin-top: 5px;
     color: #8d8888;
     font-size: 1.286rem;
     font-weight: normal;
     display: inline-block;
     position: relative;
 }
+header h2 strong { display: block; margin-bottom: 10px;
+                   color: red; font-size: 18px }
  #logo {
     position: absolute;
-    bottom: -45px;
-    right: -165px;
+    bottom: -23px;
+    right: -192px;
     width: 100px;
     z-index: 1000;
-}
-
- #logo img {
-    max-width: 100%;
 }
 
 nav {
@@ -202,6 +201,11 @@ nav li {
     background-color: #394244;
 }
 
+.thankyou .payment {
+    color: #FFFFFF;
+    background-color: #ee0000;
+    padding: 4px;
+}
 
 h2 > a { text-decoration: none; color: inherit }
 h2 > a:hover { text-decoration: none; color: inherit }
@@ -227,7 +231,7 @@ h2 > a:hover { text-decoration: none; color: inherit }
     max-width: 100%;
 }
 
-.speakers .col-md-6:nth-child(3n+1){
+.speakers .col-md-6:nth-child(2n){
     clear: left;
 }
 
@@ -302,11 +306,15 @@ h2 > a:hover { text-decoration: none; color: inherit }
 /*****************/
 
 .locality h3 {
-    margin-top: 40px;
+    margin-top: 15px;
 }
 .locality .map {
-    height: 298px;
+    height: 410px;
     display: block;
+}
+
+.locality address {
+    padding-left: 40px;
 }
 
 .locality figure.col-md-2 {
@@ -326,28 +334,29 @@ h2 > a:hover { text-decoration: none; color: inherit }
 /* REGISTRATION STUFF*/
 /*********************/
 
-#tickets {
+.tickets {
     background-color: #ee0000;
     color: #FFFFFF;
     padding-bottom: 33px;
 }
 
-#tickets h2 {
+.tickets h2 {
     color: #FFFFFF;
+    4px 6px 33px 6px
 }
-#tickets label, #tickets input {
+.tickets label, .tickets input, .tickets button {
     display: block;
 }
 
-#tickets label{
+.tickets label{
     font-weight: normal;
     font-size: 2.500rem
 }
-#tickets input, #tickets select {
+.tickets input, .tickets button, .tickets select {
     color: #333;
 }
 
-#tickets input {
+.tickets input, .tickets button {
     width: calc(100% - 5px);
     min-height: 35px;
     padding-left: 5px;
@@ -355,11 +364,11 @@ h2 > a:hover { text-decoration: none; color: inherit }
     border: 1px solid #FFFFFF;
 }
 
-#tickets form div {
+.tickets form div {
     margin-bottom: 15px;
 }
 
-#tickets input[type="submit"] {
+.tickets button {
     background-color: #344040;
     border: 1px solid #344040;
     width: 30%;
@@ -367,22 +376,22 @@ h2 > a:hover { text-decoration: none; color: inherit }
     color: #FFFFFF;
 }
 
-#tickets select {
+.tickets select {
     width: 100%;
     min-height: 35px;
 }
 
-#tickets .col-md-6 ul {
+.tickets .col-md-6 ul {
     margin-left: 0;
     padding-left: 0;
 }
-#tickets .col-md-6 li {
+.tickets .col-md-6 li {
     font-size: 2.000rem;
     list-style-type: none;
     margin-left: 0;
     padding-left: 0;
 }
-#tickets .col-md-6 li span {
+.tickets .col-md-6 li span {
     display: block;
     font-size: 1.2rem;
 }
