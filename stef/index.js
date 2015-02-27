@@ -5,7 +5,7 @@
 //
 //
 
-var cody = require('cody');
+var cody = require('../cody');
 var express = cody.express;
 var fs = cody.fs;
 var mysql = cody.mysql;
@@ -38,7 +38,7 @@ cody.startWebApp(cody.server, {
     "smtp": "smtpmailer.howest.be",
     "version": "V0.1",
     "defaultlanguage": "nl",
-    "hostnames" : "stef.local,stefdekien.be,www.stefdekien.be",
+    "hostnames" : "stef.local,stefdekien.be,www.stefdekien.be,localhost",
     "dbuser": "cody",
     "dbpassword": "ydoc",
     "dbhost": "localhost",
