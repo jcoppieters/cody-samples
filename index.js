@@ -64,7 +64,7 @@ cody.bootstrap = function () {
             "dbhost": row.dbhost,
             "datapath": row.datapath,
             "db": row.db,
-            "controllers": require("./websites/" + row.name + "/controllers/")
+            "controllers": require("./" + row.name + "/controllers/")
           }, next);
 
       }, function() {
