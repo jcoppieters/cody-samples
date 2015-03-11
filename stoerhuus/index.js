@@ -5,7 +5,7 @@
 //
 //
 
-var cody = require('cody');
+var cody = require('../cody');
 var express = cody.express;
 var fs = cody.fs;
 var mysql = cody.mysql;
