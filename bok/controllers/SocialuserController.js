@@ -9,7 +9,7 @@
 console.log("loading " + module.id );
 
 var mysql = require("mysql");
-var cody =  require("../../cody/index.js");
+var cody =  require("cody/index.js");
 var fs = require("fs");
 
 //sql statements

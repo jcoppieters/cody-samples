@@ -4,7 +4,7 @@
  */
 console.log("loading " + module.id);
 
-var cody   = require("../../cody/index.js");
+var cody   = require("cody/index.js");
 var fs     = require("fs");
 var moment = require("moment");
 var Deal   = require("../models/Deal.js");

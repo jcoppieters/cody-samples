@@ -2,7 +2,7 @@
  * Tim Coppieters
  * september 2013
  */
-var cody  = require("../../cody/index.js");
+var cody  = require("cody/index.js");
 var Buyer = require("../models/buyer.js");
 
 function BuyerController(context) {

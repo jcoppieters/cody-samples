@@ -5,7 +5,7 @@
 console.log("loading " + module.id);
 
 var mysql = require("mysql");
-var cody = require("../../cody/index.js");
+var cody = require("cody/index.js");
 
 var kOneDay = 24 * 60 * 60 * 1000;
 var gDays = {0: "Maandag", 1: "Dinsdag", 2: "Woensdag", 3: "Donderdag", 4: "Vrijdag", 5: "Zaterdag", 6: "Zondag"};

@@ -2,7 +2,7 @@
  * Tim Coppieters
  * september 2013
  */
-var cody  = require("../../cody/index.js");
+var cody  = require("cody/index.js");
 
 function CompanyController(context) {
   cody.Controller.call(this, context);

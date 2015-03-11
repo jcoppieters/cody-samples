@@ -6,7 +6,7 @@
 console.log("loading " + module.id);
 
 var fs = require("fs");
-var cody = require("../../cody/index.js");
+var cody = require("cody/index.js");
 
 /*
 create table photos(

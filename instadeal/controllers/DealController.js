@@ -2,7 +2,7 @@
  * Tim Coppieters
  * september 2013
  */
-var cody  = require("../../cody/index.js");
+var cody  = require("cody/index.js");
 var moment = require("moment");
 var Deal   = require("../models/Deal.js");
 var Category = require("../models/Category.js");
