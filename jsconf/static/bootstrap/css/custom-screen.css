@@ -188,9 +188,9 @@ nav li {
 }
 
 .schedule article { width: 50% }
-.schedule article:nth-of-type(1) { width: 33.3% }
-.schedule article:nth-of-type(2) { width: 33.3% }
-.schedule article:nth-of-type(3) { width: 33.3% }
+.xschedule article:nth-of-type(1) { width: 33.3% }
+.xschedule article:nth-of-type(2) { width: 33.3% }
+.xschedule article:nth-of-type(3) { width: 33.3% }
 
 
 .calltoaction {
@@ -282,27 +282,18 @@ h2 > a:hover { text-decoration: none; color: inherit }
     margin-bottom: 30px;
 }
 
-.schedule .container {
-
-}
 
 
-.schedule .container>article {
-/*    background-image: url(../../assets/media/img/pattern-vertical.gif);
-    background-position: top left;
-    background-repeat: repeat-y;
-    margin-bottom: 40px; */
-}
-section.schedule article:nth-of-type(1) {
+section.schedule article:nth-of-type(odd) {
     background-position: top right;
     padding-left: 0px;
     padding-right: 26px;
 }
-section.schedule article:nth-of-type(1) h3, section.schedule article:nth-of-type(1) p {
-    text-align: left;
+section.schedule article:nth-of-type(even) h3, section.schedule article:nth-of-type(even) p {
+    text-align: right;
 }   
-section.schedule article:nth-of-type(2) h3 {
-    text-align: center;
+section.schedule article:nth-of-type(odd) h3, section.schedule article:nth-of-type(odd) p {
+    text-align: left;
 }
 
 
@@ -316,7 +307,7 @@ section.schedule article:nth-of-type(2) h3 {
     padding-right: 26px;
     margin-bottom: 10px;
 }
-.schedule article:nth-of-type(odd) {
+.schedule article:nth-of-type(even) {
     background-image: url(../../assets/media/img/pattern-vertical.gif);
     background-position: top left;
     background-repeat: repeat-y;
