@@ -10,6 +10,9 @@
 <% include header.ejs %>
 
 <body id="page<%= page.itemId %>">
+<style>label { font-size: 15px; width: 130px }
+#Aantal { width: 30px }
+div#action_buttons { padding-left: 143px }</style>
 	<div id="wrapper">
 
     <% include top.ejs %>
@@ -27,6 +30,20 @@
 
     <% include footer.ejs %>
 	</div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="<%=cstatic%>/js/lib/jquery.validate<%=min%>.js"></script>
+  <script>
+    $(document).ready(function() {
+
+      $("form").validate();
+
+      $("form #submitter").click(function() {
+        $("form #request").val("send");
+        $("form").submit();
+      });
+
+    });
+  </script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script src="<%=cstatic%>/js/lib/jquery.validate<%=min%>.js"></script>

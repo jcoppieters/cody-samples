@@ -51,7 +51,7 @@
     <% if (typeof submitted === "undefined") { %>
     <% for (var i in page.children) {
       var subpage = page.children[i];
-      var cols = (subpage.link === 'speakers') ? '6' : '4';
+      var cols = (subpage.link === 'speakers') ? '6' : '6';
       var adorn = (subpage.link === 'schedule') ? ' <i class="fa fa-calendar"></i> ' : ''; %>
 
         <section class="<%= subpage.link %>">
