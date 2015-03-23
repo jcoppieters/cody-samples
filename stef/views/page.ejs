@@ -28,5 +28,21 @@
     <% include footer.ejs %>
 	</div>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="<%=cstatic%>/js/lib/jquery.validate<%=min%>.js"></script>
+  <script>
+    $(document).ready(function() {
+
+      $("form").validate();
+
+      $("form #submitter").click(function() {
+        $("form #request").val("send");
+        $("form").submit();
+      });
+
+    });
+  </script>
+
+
 </body>
 </html>
