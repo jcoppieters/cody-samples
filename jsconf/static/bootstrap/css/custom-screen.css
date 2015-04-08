@@ -8,7 +8,19 @@ strong {
 section h2 {
     color: #ee0000;
 }
-
+h5.soldout {
+ position: absolute;
+ background-color: rgba(255, 255, 0, 0.65);
+ top: 50%;
+ left: 50%;
+ font-size:34px;
+ transform: rotate(315deg) translate(-27px, -78px);
+ -moz-transform: rotate(315deg) translate(-27px, -78px);
+ -ms-transform: rotate(315deg) translate(-27px, -78px);
+ -o-transform: rotate(315deg) translate(-27px, -78px);
+ -webkit-transform: rotate(315deg) translate(-27px, -78px);
+ padding:20px
+}
 .cf:before,
 .cf:after {
     content: " "; /* 1 */
