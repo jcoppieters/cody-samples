@@ -1,3 +1,6 @@
+/**
+ * Created by johan on 25/03/15.
+ */
 //
 // Johan Coppieters - jan 2013 - Cody CMS
 //
@@ -43,7 +46,7 @@ cody.startWebApp(cody.server, {
     "dbhost": "localhost",
     "datapath": "/usr/local/data/jsconf",
     "db": "jsconf",
-    "controllers": require("./controllers/")
+    "controllers": require("./jsconf/controllers/")
   },
   function() {
     console.log("Loaded Empty web app....");

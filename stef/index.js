@@ -34,7 +34,7 @@ cody.server.get("/cody/static/*", function (req, res) {
 
 cody.startWebApp(cody.server, {
     "name": "stef",
-    "mailFrom": "info@cody-cms.org",
+    "mailFrom": "stefdekien2014@gmail.com",
     "smtp": "smtpmailer.howest.be",
     "version": "V0.1",
     "defaultlanguage": "nl",

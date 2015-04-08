@@ -468,3 +468,11 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2013-09-28 12:53:36
+
+-- additions
+
+insert into templates values (23,'Admin-Contacts','Manage contact data & mailings','ContactController','-/cms/contacts.ejs','',0,'Y',0);
+ insert into items value (23,'Admin - Contacts',20,1,23,'A',15,'2015-03-27','2015-03-27','2101-01-31','Y','N','list','');
+  insert into pages values (23,'en','Contacts','contacts','Y','','','2015-03-27',now());
+  insert into pages values (23,'nl','Contacts','contacts','Y','','','2015-03-27',now());
+ update items set sortorder = 99 where id = 22;

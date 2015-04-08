@@ -15,19 +15,21 @@ function ContactController(context) {
     tableName: "contacts",
     id: {name: "id", def: 0},
     cols: [
-      {name: "name", def: "", list: true, sort: "asc", q: "like"},
-      {name: "cie", def: "", q: "like", list: true},
-      {name: "title", def: "", list: false},
-      {name: "target", def: "", list: false, q: "like"},
-      {name: "email", def: "", list: true},
-      {name: "phone", def: "", list: true},
-      {name: "origin", def: "", list: false},
-      {name: "active", def: "Y", list: true},
-      {name: "nomail", def: "N"}]
+      {name: "name",   label: "Name",        def: "",  list: true, sort: "asc", q: "like"},
+      {name: "cie",    label: "Company",     def: "",  list: true, q: "like" },
+      {name: "title",  label: "Title",       def: "",  list: false},
+      {name: "tags",   label: "Tags",        def: "",  list: false, q: "like"},
+      {name: "email",  label: "Email",       def: "",  list: true},
+      {name: "phone",  label: "Phone",       def: "",  list: true},
+      {name: "origin", label: "Origin",      def: "",  list: false},
+      {name: "active", label: "Active",      def: "Y", list: true, hide: true},
+      {name: "data",   label: "Name",        def: "Y", list: false},
+      {name: "nomail", label: "Allows Mail", def: "Y", list: true, hide: true}]
   });
 
+  this.model.addRef("tags", "select id, name from tags order by name");
 
-  this.model.addRef("targets", "select id, name from targets order by name");
+  context.model = myModel;
 
 	// init inherited controller
 	cody.Controller.call(this, context);
@@ -54,30 +56,30 @@ ContactController.prototype.doRequest = function( finish ) {
 };
 
 ContactController.prototype.doMails = function (finished) {
-  this.sendTargetMails(finished, this.getParam("q.target", ""), "johan577@mac.com", "testing", "cody-cms.org testing");
+  this.sendTargetMails(finished, this.getParam("q.tags", ""), "johan577@mac.com", "testing", "cody-cms.org testing");
 }
 
 
-ContactController.prototype.sendTargetMails = function (finished, target, pFrom, pSubject, pText) {
+ContactController.prototype.sendTargetMails = function (finished, tags, pFrom, pSubject, pText) {
   var self = this;
 
   var p = "";
   var ps = [];
-  if (Array.isArray(target)) {
-    for(var it in target) {
-      p = p + ((it == 0) ? "where " : " or ") + "target like ?";
-      ps.push("%"+target[it]+"%");
+  if (Array.isArray(tags)) {
+    for(var it in tags) {
+      p = p + ((it == 0) ? "where " : " or ") + "tags like ?";
+      ps.push("%"+tags[it]+"%");
     }
   }
-  console.log("Sending email from " + pFrom + " to targets: " + target + " -> " + p);
+  console.log("Sending email from " + pFrom + " to contacts with tags: " + tags + " -> " + p);
 
   self.query("select * from contacts " + p, ps, function(err, result) {
-    if (err) { console.log("error selecting contacts for target "+target + " -> " + err); } else {
+    if (err) { console.log("error selecting contacts with tags "+ tags + " -> " + err); } else {
 
       for (var iC in result) {
         var C = result[iC];
         //self.sendMail (pFrom, C.email, pSubject, pText);
-        console.log (pFrom + " - " + C.email + " - " +  pSubject + " - " +  pText);
+        console.log ("mailto: " + pFrom + " - " + C.email + " - " +  pSubject + " - " +  pText);
 
       }
     }
@@ -86,11 +88,23 @@ ContactController.prototype.sendTargetMails = function (finished, target, pFrom,
 };
 
 /*
-create table targets (
- id char(1) not null primary key,
+insert into templates values
+(108,'Admin - Contacts','ContactsController','contacts.ejs',0,999,'Y',0);
+
+insert into items values
+(316,'Contacts',20,1,108,'M',5,'2015-03-27','2015-03-27','2101-01-31','Y','Y','list','');
+
+insert into pages values
+(316,'en','Contacts','contacts','Y','','','2015-03-27','2015-03-27'),
+(316,'nl','Contacts','contacts','Y','','','2015-03-27','2015-03-27');
+
+
+drop table targets;
+create table tags (
+ id char(16) not null primary key,
  name varchar(63)
  );
-insert into targets values ('j', 'jsconf'), ('s', 'Stage'), ('c', 'Cody');
+insert into tags values ('jsconf', 'jsconf'), ('stage', 'Stage'), ('cody', 'Cody'), ('overleg', 'ICT Overleg');
 
 create table contacts (
  id int(11) not null primary key auto_increment,
@@ -100,13 +114,16 @@ create table contacts (
  email varchar(127),
  phone varchar(32),
  origin varchar(15),
- target varchar(31),
+ target varchar(255),
+ data varchar(2048),
  active char(1) default 'Y',
  nomail char(1) default 'N'
 );
 alter table contacts add column origin varchar(15);
-alter table contacts add column target varchar(31);
+alter table contacts modify column target tags varchar(255);
+alter table contacts change target tags varchar(255);
 alter table contacts add column active char(1) default 'Y';
+alter table contacts add column data varchar(2048) default '{}';
 alter table contacts add column  nomail char(1) default 'N';
 
 insert into contacts (cie, name,title, email, phone) values('4U Solutions BVBA','Gekiere Ruben', 'zaakvoerder', 'ruben@gekiere.com', '+32 494232018');
