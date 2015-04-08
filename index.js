@@ -54,7 +54,7 @@ cody.bootstrap = function () {
 
         cody.startWebApp(cody.server, {
             "name": row.name,
-            "mailFrom": "info@cody-cms.org",
+            "mailFrom": row.mailfrom,
             "smtp": "smtpmailer.howest.be",
             "version": row.version,
             "defaultlanguage": row.defaultlanguage,

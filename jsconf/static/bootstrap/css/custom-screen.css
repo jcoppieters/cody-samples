@@ -8,7 +8,19 @@ strong {
 section h2 {
     color: #ee0000;
 }
-
+h5.soldout {
+ position: absolute;
+ background-color: rgba(255, 255, 0, 0.65);
+ top: 50%;
+ left: 50%;
+ font-size:34px;
+ transform: rotate(315deg) translate(-27px, -78px);
+ -moz-transform: rotate(315deg) translate(-27px, -78px);
+ -ms-transform: rotate(315deg) translate(-27px, -78px);
+ -o-transform: rotate(315deg) translate(-27px, -78px);
+ -webkit-transform: rotate(315deg) translate(-27px, -78px);
+ padding:20px
+}
 .cf:before,
 .cf:after {
     content: " "; /* 1 */
@@ -413,6 +425,27 @@ section.schedule article:nth-of-type(odd) h3, section.schedule article:nth-of-ty
     font-size: 1.2rem;
 }
 
+.tickets th {
+    font-size: 1.8rem;
+    padding-bottom: 10px;
+}
+.tickets .pricing {
+    width: 12%;
+}
+.tickets tr td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.tickets tr td:first-child {
+    font-size: 1.8rem;
+}
+
+.tickets tr {
+    border-bottom: 1px dashed #FFFFFF;
+}
+.tickets table {
+    margin-bottom: 20px;
+}
 /*********************/
 /* REGISTRATION STUFF*/
 /*********************/
