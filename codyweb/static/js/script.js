@@ -1,9 +1,13 @@
 $(document).ready(function() {
 
-  $("form").validate();
+  var $form = $("form");
 
-  $("form #submitter").click(function() {
-    $("form #request").val("send");
-    $("form").submit();
-  });
+  if ($form.length > 0) {
+    $form.validate();
+
+    $("form #submitter").click(function() {
+      $("form #request").val("send");
+      $form.submit();
+    });
+  }
 });
