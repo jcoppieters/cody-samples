@@ -477,8 +477,9 @@ footer {
     padding-bottom: 45px;
 }
 footer figure {
-    text-align: center;
+    text-align: center
 }
+footer > div { display: block }
 
 footer img {
     max-width: 100%;

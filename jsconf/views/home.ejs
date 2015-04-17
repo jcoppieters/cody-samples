@@ -9,7 +9,6 @@
   <header>
     <%- render({intro: 'Y'}) %>
   </header>
-
   <% var refresh = (typeof submitted !== "undefined") ? '?dl=' + new Date().getTime() : ''; %>
 
   <nav class="navbar">
@@ -32,7 +31,7 @@
           <div>
             <p>We houden U op de hoogte en sturen je later nog een email ter bevestiging.</p>
             <p>We zien je zowiezo op 23 april in  <a href="//www.jsconf.be#locality">Howest te Brugge</a>.</p>
-            <p class="payment"><i class="fa fa-exclamation-circle"></i>Vergeet niet te betalen op rekening <strong>BE86 0011 1889 0350</strong> BIC: GEBABEBB van jsconf.be, met de nota: jsconf2015 + uw naam.</p>
+            <p class="payment"><i class="fa fa-exclamation-circle"></i>&nbsp;Vergeet niet te betalen op rekening <strong>BE86 0011 1889 0350</strong> BIC: GEBABEBB van jsconf.be, met de nota: jsconf2015 + uw naam.</p>
 
           </div>
 
@@ -41,8 +40,7 @@
           <div>
             <p>We will keep you informed and send you an email as confirmation in the next coming days.</p>
             <p>See you on April the 23rd at <a href="//www.jsconf.be#locality">Howest Brugge</a>.</p>
-            <p class="payment"><i class="fa fa-exclamation-circle"></i>
-&nbsp;Don't forget to pay to:<br>&nbsp;- IBAN: <strong>BE86 0011 1889 0350</strong><br>&nbsp;- BIC: GEBABEBB of jsconf.be, Rijselstraat 5, 8200 Brugge<br> with the remark: jsconf2015 + your name.</p>
+            <p class="payment"><i class="fa fa-exclamation-circle"></i>&nbsp;Don't forget to pay to:<br>&nbsp;- IBAN: <strong>BE86 0011 1889 0350</strong><br>&nbsp;- BIC: GEBABEBB of jsconf.be, Rijselstraat 5, 8200 Brugge<br> with the remark: jsconf2015 + your name.</p>
           </div>
         <% } %>
        </div>
@@ -66,7 +64,7 @@
         <section class="<%= subpage.link %>">
           <div class="container">
             <h2><a id="<%= subpage.link %>"><%- adorn + subpage.title + adorn %></a></h2>
-            <% for (var j in subpage.content) {
+            <% for (var j in subpage.content) { console.log(subpage.content[j]);
                 if (subpage.content[j].kind === 'S') { %>
                   <%- subpage.content[j].data %>
                 <% } else { %>
