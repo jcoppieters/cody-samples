@@ -465,6 +465,9 @@ section.schedule article:nth-of-type(odd) h3, section.schedule article:nth-of-ty
     color: #364040;
 }
 
+
+.radios input, .radios label { display: inline-block; width: inherit; margin: 5px; vertical-align: middle; }
+
 /***************/
 /* FOOTER STUFF*/
 /***************/

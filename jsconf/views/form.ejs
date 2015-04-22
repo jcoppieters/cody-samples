@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="<%=page.language%>">
+<!--<![endif]-->
+
+<% include head.ejs %>
+
+<body id="page<%= page.itemId %>">
+
+  <header>
+    <h1>jsconf.be Feedback page</h1>
+  </header>
+
+  <main>
+    <% if (typeof submitted !== "undefined") { %>
+     <section class="thankyou">
+       <div class="container">
+         <%- render({intro: 'Y', kind: 'T'}) %>
+       </div>
+     </section>
+    <% } %>
+
+    <% if (typeof submitted === "undefined") { %>
+
+     <section class="tickets">
+       <div class="container">
+         <h2><a id="tickets">Feedback</a></h2>
+
+         <div class="col-md-6">
+           <%- render({intro: 'N', kind: 'M'}) %>
+         </div>
+
+         <div class="col-md-6">
+           <%- render({intro: 'N', kind: 'T'}) %>
+         </div>
+       </div>
+     </section>
+    <% } %>
+
+  </main>
+
+
+  <% include foot.ejs %>
+
+</body>
+</html>
