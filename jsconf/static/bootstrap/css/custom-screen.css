@@ -1,4 +1,3 @@
-
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Kreon', Times, serif;
 }
@@ -371,7 +370,7 @@ section.schedule article:nth-of-type(odd) h3, section.schedule article:nth-of-ty
 
 .tickets h2 {
     color: #FFFFFF;
-    4px 6px 33px 6px
+    # ?? 4px 6px 33px 6px
 }
 .tickets label, .tickets input, .tickets button {
     display: block;
