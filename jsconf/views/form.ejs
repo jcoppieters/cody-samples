@@ -4,7 +4,7 @@
 
 <% include head.ejs %>
 
-<body id="page<%= page.itemId %>">
+<body id="page<%= page.itemId %>" class="feedback">
 
   <header>
     <h1>jsconf.be Feedback page</h1>
@@ -23,16 +23,22 @@
 
      <section class="tickets">
        <div class="container">
-         <h2><a id="tickets">Feedback</a></h2>
 
          <div class="col-md-6">
+           <h2>Feedback form</h2>
            <%- render({intro: 'N', kind: 'M'}) %>
          </div>
 
          <div class="col-md-6">
+           <h2>&nbsp;</h2>
            <%- render({intro: 'N', kind: 'T'}) %>
          </div>
        </div>
+     </section>
+     <section>
+         <div class="col-md-8 col-lg-offset-2">
+           <%- render({intro: 'N', kind: 'F'}) %>
+         </div>
      </section>
     <% } %>
 
@@ -41,5 +47,21 @@
 
   <% include foot.ejs %>
 
+  <script>
+    $(document).ready(function() {
+      $($("fieldset div")[1]).hide();
+
+      $("select").on("change", function() {
+        if ($(this).val() == "0") {
+          $($("fieldset div")[1]).hide();
+        } else {
+          $($("fieldset div")[1]).show();
+        }
+        $("input[name=WorkshopFeedback]").removeAttr("checked");
+      });
+
+    });
+
+  </script>
 </body>
 </html>

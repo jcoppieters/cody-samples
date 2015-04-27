@@ -466,7 +466,21 @@ section.schedule article:nth-of-type(odd) h3, section.schedule article:nth-of-ty
 }
 
 
-.radios input, .radios label { display: inline-block; width: inherit; margin: 5px; vertical-align: middle; }
+/* feedback page */
+.feedback .tickets .radios input, .radios label { display: inline-block; width: inherit; margin: 3px;
+                                         vertical-align: middle; color: black; font-size: 1.900rem; }
+.feedback .tickets .radios label { margin-right: 15px;  }
+.feedback .tickets h2 { color: black }
+.feedback .tickets ul { padding-left: inherit; margin-left: 30px }
+.feedback .tickets ul li { list-style-type: disc }
+.feedback .tickets ul li a { list-style-type: disc; color: white }
+.feedback .tickets textarea { color: black }
+.feedback .tickets input, .feedback textarea, .feedback select { width: 475px }
+.feedback .tickets p { font-size: 2.0rem }
+.feedback .tickets fieldset div { marign-bottom: 18px; }
+.feedback .tickets #submitter { margin: 5px 0 18px 0 }
+.feedback header { height: 104px }
+.feedback header h1 { padding-top: 20px }
 
 /***************/
 /* FOOTER STUFF*/
