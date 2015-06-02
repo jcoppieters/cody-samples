@@ -1,6 +1,5 @@
 console.log("loading " + module.id );
 
-var mysql = require("mysql");
 var cody =  require("cody/index.js");
 var fs = require("fs");
 
@@ -38,6 +37,13 @@ function CalendarController(context) {
 CalendarController.prototype =  Object.create( cody.Controller.prototype );
 module.exports = CalendarController;
 
+CalendarController.prototype.needsLogin = function() {
+  if (this.isRequest("ics")) {
+    return false;
+  } else {
+    return cody.Controller.prototype.needsLogin.call(this);
+  }
+};
 
 CalendarController.prototype.doRequest = function(finish) {
     var self = this;
@@ -365,7 +371,7 @@ CalendarController.prototype.doCal =  function(month, year, finish) {
             for(var i = 0; i < 35; i++) {
                 days[i] = [];
                 //construct date
-                if (i < self.context.startIndex) {
+                if ((i+1) < self.context.startIndex) {
                     if (sqlMonth === 1) {
                         curYear = year -1;
                         curMonth = 12;
