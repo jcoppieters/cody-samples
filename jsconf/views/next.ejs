@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="<%=page.language%>">
+<!--<![endif]-->
+
+<% include head.ejs %>
+
+<body id="page<%= page.itemId %>">
+
+  <header>
+    <%- render({intro: 'Y'}) %>
+  </header>
+  <% var refresh = (typeof submitted !== "undefined") ? '?dl=' + new Date().getTime() : ''; %>
+
+  <nav class="navbar">
+      <ul class="nav navbar-nav">
+        <li><a href="./2015#callforspeakers">call for speakers</a></li>
+        <li><a href="mailto:info@jsconf.be">Contact</a></li>
+      </ul>
+  </nav>
+
+  <main>
+
+    <section class="descriptive">
+        <div class="container">
+            <h2>The future of Javascript</h2>
+
+
+           <p> We would like to thank all our attendees for a wonderful conference experience! We will try again next year, with more <strong>JavaScript</strong>, more <strong>Internet of Things</strong> and even <strong>security</strong>.</p>
+
+            <p>   Again we will offer both <strong>hands-on workshops</strong> as well as <strong>speaker sessions</strong>,  taking into account your feedback.</p>
+
+            <p>   All sessions and workshops will be hosted  in English, but the location of the conference will be in the Bruges area. Once again this event will be hosted by <strong>HOWEST</strong></p>
+
+            <h3>  Announcements for jsconf.be 2016: date &amp; call for speakers will be placed:</h3>
+             
+            <ul>
+                <li><i class="fa fa-desktop"></i>on this very website! </li>
+                <li><i class="fa fa-twitter"></i>@jsconfbe </li>
+                <li><i class="fa fa-envelope"></i>by mail to previous participants</li>
+              <% if (typeof submitted !== "undefined") { %>
+                <li><i class="fa fa-envelope"></i><b style="color: red">To you !!</b></li>
+              <% } %>
+            </ul>
+
+          <% if (typeof submitted === "undefined") { %>
+            <% /* %><form method="" action="" id="subscribe">
+                <fieldset>
+                    <label for="email">
+                        To those who leave their email address here
+                    </label>
+                    <input type="email" id="email" name="email" />
+                    <input type="submit" value="keep me posted" />
+                </fieldset>
+            </form> <% */ %>
+            <%- render({intro: 'N', kind: 'M'}) %>
+          <% } %>
+
+        </div>
+    </section>
+
+  </main>
+
+
+  <% include foot.ejs %>
+
+</body>
+</html>

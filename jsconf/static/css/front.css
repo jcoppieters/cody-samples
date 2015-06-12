@@ -1,57 +1,650 @@
-body { margin: 0; padding: 0; font-family: helvetica, arial, sans-serif }
-p { display: inline; font-size: 15px }
-h1 { font-size: 45px; color: white; font-weight: bold; width: 100%; text-align: left;
-     display: block; margin: 20px 0 30px 0 }
-h2 { font-size: 45px; color: #53b478; font-weight: bold;  margin: 25px 0 15px }
-div p { color: #333334; display: block }
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Kreon', Times, serif;
+}
+strong {
+    font-weight: bold;
+}
+section h2 {
+    color: #ee0000;
+}
+h5.soldout {
+ position: absolute;
+ background-color: rgba(255, 255, 0, 0.65);
+ top: 50%;
+ left: 50%;
+ font-size:34px;
+ transform: rotate(315deg) translate(-27px, -78px);
+ -moz-transform: rotate(315deg) translate(-27px, -78px);
+ -ms-transform: rotate(315deg) translate(-27px, -78px);
+ -o-transform: rotate(315deg) translate(-27px, -78px);
+ -webkit-transform: rotate(315deg) translate(-27px, -78px);
+ padding:20px
+}
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
 
-div { background-color: #eceded; border: 1px solid #e3e3e3; border-radius: 4px;
-      padding: 5px 20px 5px 20px; margin: 0 0 20px; font-size: 17px  }
+.cf:after {
+    clear: both;
+}
 
-header { background: black url(../images/pttrn.png) repeat left top; color: white; margin: 0; padding: 10px 0  }
-header > div { max-width: 908px; width: 90%; background: transparent; border: none; padding: 0; margin: 0 auto }
-header > div > p { display: inline }
-header > div > div { display: inline-block; width: 70%; border: none; background: transparent; margin: 0; padding: 0 }
-header > div > div > p { color: white; margin-right: 20px; }
-header img { display: inline-block; width: 25%; max-width: 200px; border-radius:6px }
-header a { color: white; padding-top:10px }
-header a:hover { text-decoration: none; color: red }
-header span { font-size: 30px; color: yellow; padding-right: 10px }
-header strong { float: right; color: white }
+p a {
+    color: #ee0000;
+    text-decoration: underline;
+}
 
-footer { background: black url(../images/pttrn.png) repeat left top; padding: 20px 0; margin: 0 }
-footer div { max-width: 908px; width: 90%; margin: 0 auto; padding: 0; border: none; background: transparent; }
-footer img { display: inline-block }
-footer a { text-decoration: none; text-align: center;
-           display: inline-block; width: 32%; margin: auto; vertical-align: middle }
+p a:hover {
+    color: #ee0000;
+    text-decoration: none;
+}
+.visible-phone {
+    display: none;
+}
 
-section { max-width: 908px; width: 90%; margin: 0 auto; padding: 0; border: 0; background: transparent; }
-section img { max-width: 800px; box-shadow: darkgrey 3px 3px 3px; margin: 8px; }
+/***************/
+/* HEADER STUFF*/
+/***************/
 
-label { display: inline-block; width: 95px; }
-label.radio { width: 240px }
-button { display: inline-block; padding: 10px 20px; border-radius: 4px; border: 0; font-size: 16px; color: #fff; background: #53b478; font-weight: bold; }
 
-input[type=text] { width: 400px; font-size: 14px; border-radius: 4px; height: 24px; border: darkgrey 1px solid }
-form div { margin: 7px 0 15px 0; border: none; padding: 0 }
-div.radios label { display: inline-block; width: 70%}
-div.radios label { width: inherit; margin-left: 3px; margin-right: 20px }
-#action_buttons { padding-left: 107px }
-fieldset { border: none }
-label.error { width:400px; color:red; display: block; margin-left: 80px }
+header {
+    background-image: url(../../assets/media/img/header.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: contain;
+    height: 149px;
+    text-align: center;
+}
 
-/* wall */
-.wall textarea { display: block }
-.wall ul { list-style: none; padding: 0 }
-.wall li { margin: 12px 0 12px 0; padding: 0 }
-.wall span { font-weight: bold }
-.wall span.Q { color: red }
+header h1, header h2  {
 
-#search > div > span { margin: 0 8px 0 3px ; }
-#records { border-collapse: collapse; width: 99%; margin-top: 15px }
-#records a { text-decoration: underline; color: inherit; }
-#records th { border-bottom:solid 2px green; border-top:solid 2px green; padding: 5px; text-align: left }
-#records td { padding: 5px; font-size: 12px; }
-#records .inactive td { color: darkgray }
-#records tr:nth-child(odd) { background-color: white }
+}
+header h1 span {
+    display: block;
+}
+header h2 {
+    margin-top: 5px;
+    color: #8d8888;
+    font-size: 1.286rem;
+    font-weight: normal;
+    display: inline-block;
+    position: relative;
+}
+header h2 strong { display: block; margin-bottom: 10px;
+                   color: red; font-size: 18px }
+ #logo {
+    position: absolute;
+    bottom: -23px;
+    right: -192px;
+    width: 100px;
+    z-index: 1000;
+}
 
+nav {
+    background-color: #ee0000;
+}
+nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+nav a:hover, .nav>li>a:hover, .nav>li>a:focus {
+    text-decoration: underline;
+    background-color: #ee0000;
+    color: #FFFFFF;
+}
+
+nav li {
+    text-transform: uppercase;
+}
+
+/* Overwrite bootstrap nav */
+
+.navbar {
+    border-radius: 0;
+}
+
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+}
+
+.navbar {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+
+/*****************/
+/* WORKSHOP STUFF*/
+/*****************/
+
+.workshops {
+    background-image: url(../../assets/media/img/workshops.jpg);
+    background-repeat: no-repeat;
+/*    background-size: 150%;
+    background-position: top left;*/
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: block;
+    position: relative;
+    padding-bottom: 88px;
+    padding-top: 8px;
+}
+
+.workshops h2 {
+    color: #FFFFFF;
+    text-shadow: 2px 2px 1px rgba(100, 100, 100, 1);
+    margin-bottom: 17px;
+}
+
+.workshops article {
+    background-color: #FFFFFF;
+    /*height: 283px;*/ /* Fixed height omdat rotated workshop/session element anders nooit klopt */
+    height: 258px;
+    margin: 0 29px 26px 0;
+    padding-top: 1px;
+    /*width: 22.66949152542373%;*/
+    width: 321px;
+    position: relative;
+    border-right: solid 46px #ee0000;
+}
+
+.workshops article a {
+    color: #ee0000;
+    text-decoration: underline;
+}
+
+.workshops article a:hover {
+    color: #ee0000;
+    text-decoration: none;
+}
+
+
+.workshops  .nomargin {
+    margin-right: 0;
+}
+
+.workshops article div,
+.workshops article h3 {
+    margin: 13px 24px 13px 12px;
+}
+
+.workshops h4 {
+    line-height:46px;
+    text-align: center;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-family: "Source Sans Pro",sans-serif;
+    display: block;
+    position: absolute;
+    right: -158px;
+    top: 96px;
+    width: 100%;
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+.workshops .session {
+    /*border-color: #394244; works only if class is on article */
+    color: yellow
+}
+
+.schedule article { width: 50% }
+.xschedule article:nth-of-type(1) { width: 33.3% }
+.xschedule article:nth-of-type(2) { width: 33.3% }
+.xschedule article:nth-of-type(3) { width: 33.3% }
+
+
+.calltoaction {
+    background-color: #ee0000;
+    color: #FFFFFF;
+    border-radius: 3px;
+    box-shadow: 1px 2px 5.76px 0.24px rgba(84, 0, 0, 0.3);
+    position: absolute;
+    bottom: -23px;
+    left: 50%;
+    transform: translate(-50%);
+    width: 22.74011299435028%;
+    line-height: 46px;
+    text-align: center;
+    font-size: 2.700rem;
+    text-transform: lowercase;
+    padding-bottom: 4px;
+    text-shadow: 0px 1px 1px rgba(0, 100, 79, 0.75),0px 1px 1px rgba(252, 252, 252, 0.75);
+
+}
+
+.calltoaction:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+    background-color: #394244;
+}
+
+.thankyou .payment {
+    color: #FFFFFF;
+    background-color: #ee0000;
+    padding: 4px;
+}
+
+h2 > a { text-decoration: none; color: inherit }
+h2 > a:hover { text-decoration: none; color: inherit }
+
+/*****************/
+/* SPEAKERS STUFF*/
+/*****************/
+.speakers h2 {
+    margin-bottom: 22px;
+}
+
+.speakers article{
+   width: 48.0225988700565%;
+    margin-right: 1.977401129943503%;
+    margin-bottom: 25px;
+}
+
+.speakers article:nth-child(odd){
+    margin-right: 0;
+}
+
+.speakers article img {
+    max-width: 100%;
+}
+
+.speakers .col-md-6:nth-child(2n){
+    clear: left;
+}
+
+.speakers h3 a {
+    color: #b3b8b8;
+    float: right;
+    margin-left: 8px;
+}
+
+/*****************/
+/* SCHEDULE STUFF*/
+/*****************/
+
+.schedule {
+    background-image: url('../../assets/media/img/pattern.gif'),url('../../assets/media/img/pattern.gif');
+    background-position: top left, bottom left;
+    background-repeat: repeat-x;
+    background-color: #f6f6f6;
+}
+
+.schedule h2 {
+    text-align: center;
+}
+
+.schedule .container>h3  {
+    background-color: #333e3f;
+    color: #FFFFFF;
+    line-height: 50px;
+    text-align: center;
+    clear: both;
+    margin-bottom: 30px;
+}
+
+
+
+section.schedule article:nth-of-type(odd) {
+    background-position: top right;
+    padding-left: 0px;
+    padding-right: 26px;
+}
+section.schedule article:nth-of-type(even) h3, section.schedule article:nth-of-type(even) p {
+    text-align: right;
+}   
+section.schedule article:nth-of-type(odd) h3, section.schedule article:nth-of-type(odd) p {
+    text-align: left;
+}
+
+
+.schedule h4, .schedule h5 {
+    font-size: 1.5rem;
+    color: #ee0000;
+    text-align: center;
+    clear: both;
+}
+.schedule .afternoon article {
+    padding-right: 26px;
+    margin-bottom: 10px;
+}
+.schedule article:nth-of-type(even) {
+    background-image: url(../../assets/media/img/pattern-vertical.gif);
+    background-position: top left;
+    background-repeat: repeat-y;
+    padding-left: 26px;
+    padding-right: 0px;
+    margin-right: 0;
+    text-align: right;
+}
+
+
+/*****************/
+/* LOCALITY STUFF*/
+/*****************/
+
+.locality h3 {
+    margin-top: 15px;
+}
+.locality .map {
+    height: 410px;
+    display: block;
+}
+
+.locality address {
+    padding-left: 40px;
+}
+
+.locality figure.col-md-2 {
+    width: 333px;
+}
+
+.locality img {
+    max-width: 100%;
+}
+
+.locality .p-tel {
+    display: block;
+}
+
+
+/*********************/
+/* REGISTRATION STUFF*/
+/*********************/
+
+.tickets {
+    background-color: #ee0000;
+    color: #FFFFFF;
+    padding-bottom: 33px;
+}
+
+.tickets h2 {
+    color: #FFFFFF;
+    # ?? 4px 6px 33px 6px
+}
+.tickets label, .tickets input, .tickets button {
+    display: block;
+}
+
+.tickets label{
+    font-weight: normal;
+    font-size: 2.500rem
+}
+.tickets input, .tickets button, .tickets select {
+    color: #333;
+}
+
+.tickets input, .tickets button {
+    width: calc(100% - 5px);
+    min-height: 35px;
+    padding-left: 5px;
+    border-radius: 5px;
+    border: 1px solid #FFFFFF;
+}
+
+.tickets form div {
+    margin-bottom: 15px;
+}
+
+.tickets button {
+    background-color: #344040;
+    border: 1px solid #344040;
+    width: 30%;
+    margin-left: auto;
+    color: #FFFFFF;
+}
+
+.tickets select {
+    width: 100%;
+    min-height: 35px;
+}
+
+.tickets .col-md-6 ul {
+    margin-left: 0;
+    padding-left: 0;
+}
+.tickets .col-md-6 li {
+    font-size: 2.000rem;
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+.tickets .col-md-6 li span {
+    display: block;
+    font-size: 1.2rem;
+}
+
+.tickets th {
+    font-size: 1.8rem;
+    padding-bottom: 10px;
+}
+.tickets .pricing {
+    width: 12%;
+}
+.tickets tr td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.tickets tr td:first-child {
+    font-size: 1.8rem;
+}
+
+.tickets tr {
+    border-bottom: 1px dashed #FFFFFF;
+}
+.tickets table {
+    margin-bottom: 20px;
+}
+/*********************/
+/* REGISTRATION STUFF*/
+/*********************/
+
+.descriptive .container {
+    width: 50%;
+    padding-bottom: 40px;
+}
+.descriptive h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    margin-top: 40px;
+}
+
+.descriptive p {
+    margin-bottom: 16px;
+    color: #364040;
+}
+
+.descriptive h3 {
+    font-size: 1.4rem;
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+
+.descriptive li {
+    list-style-type: none;
+    margin-bottom: 6px;
+}
+.descriptive ul {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 20px;
+}
+.descriptive li .fa {
+    display: inline-block;
+    margin-right: 10px;
+}
+.descriptive form label {
+    font-weight: normal;
+}
+.descriptive form input[type="email"] {
+    background-color: #ee0000;
+    color: #FFFFFF;
+    padding: 2px;
+    border: 1px solid #ee0000;
+    border-radius: 8px;
+    display: block;
+    width: 65%;
+    height: 34px;
+    margin-bottom: 5px;
+}
+.descriptive form input[type="submit"] {
+    background-color: transparent;
+    border: 1px solid #ee0000;
+    color: #ee0000;
+    border-radius: 5px;
+    padding: 5px;
+}
+/* feedback page */
+.feedback .tickets .radios input, .radios label { display: inline-block; width: inherit; margin: 3px;
+                                         vertical-align: middle; color: black; font-size: 1.900rem; }
+.feedback .tickets .radios label { margin-right: 15px;  }
+.feedback .tickets h2 { color: black }
+.feedback .tickets ul { padding-left: inherit; margin-left: 30px }
+.feedback .tickets ul li { list-style-type: disc }
+.feedback .tickets ul li a { list-style-type: disc; color: white }
+.feedback .tickets textarea { color: black }
+.feedback .tickets input, .feedback textarea, .feedback select { width: 475px }
+.feedback .tickets p { font-size: 2.0rem }
+.feedback .tickets fieldset div { marign-bottom: 18px; }
+.feedback .tickets #submitter { margin: 5px 0 18px 0 }
+.feedback header { height: 104px }
+.feedback header h1 { padding-top: 20px }
+
+/***************/
+/* FOOTER STUFF*/
+/***************/
+
+
+footer {
+    background-image: url(../../assets/media/img/pattern-footer.png);
+    color: #d8d4d4;
+    padding-top: 45px;
+    padding-bottom: 45px;
+}
+footer figure {
+    text-align: center
+}
+footer > div { display: block }
+
+footer img {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+footer h2 {
+    color: #FFFFFF;
+    margin-bottom: -3px;
+}
+
+footer img {
+    max-width: 100%;
+}
+
+footer div a {
+    color: #d8d4d4;
+    display: block;
+    margin-top: 8px;
+}
+
+footer div a:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+@media only screen and (max-width : 767px) {
+    .visible-phone {
+        display: block;
+    }
+    .hidden-phone {
+        display: none;
+    }
+    header {
+        background-size: auto;
+        min-height: 149px;
+        height: auto;
+    }
+    header #logo {
+        display: none;
+    }
+    .workshops article {
+        width: 93%;
+        margin-left: 2%;
+
+    }
+    .workshops h4 {
+        right: -54%;
+        top: 35%;
+    }
+
+    .speakers .col-md-6 {
+        width: 93%;
+        margin-left: 2%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .descriptive .container{
+        width: 80%;
+    }
+    .descriptive form input[type="email"] {
+        width: 100%;
+    }
+    footer {
+        padding-bottom: 0;
+    }
+    footer .col-md-3 {
+        margin-bottom: 4%;
+        text-align: center;
+    }
+
+    footer div.col-md-3 {
+        border-top: 1px dashed rgba(255,255,255,0.4)
+    }
+
+    .schedule .container article {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+        background-image: none;
+        padding-left: 0;
+    }
+    .schedule .container article + h4 {
+        background-image: url(../../assets/media/img/pattern-horizontal.gif);
+        background-repeat: repeat-x;
+        background-position: top left;
+        padding-top: 2%;
+        margin-top: 3%;
+    }
+    section.schedule article:nth-of-type(2) h3 {
+        text-align: left;
+    }
+    .nav>li {
+        border-bottom: 1px solid rgba(255,255,255,.4);
+    }
+    .nav>li:last-child {
+        border-bottom: none;
+    }
+    .navbar .navbar-nav {
+        width: 100%;
+    }
+    .navbar-nav {
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width : 479px) {
+    .workshops h4 {
+        right: -57%;
+    }
+}

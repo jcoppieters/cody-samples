@@ -27,15 +27,16 @@
       </article>
 
       <% for (var icp in page.children) {
-           var CP = page.children[icp]; %>
-        <article class="intro">
-          <h3><%= CP.title %></h3>
+          var CP = page.children[icp];
+          if (CP.isVisible()) {%>
+           <article class="intro">
+            <h3><%= CP.title %></h3>
 
-          <%- render({page: CP, intro: 'Y' }) %>
+            <%- render({page: CP, intro: 'Y' }) %>
 
-          <a href="/<%=CP.url%>">Lees meer</a>
-        </article>
-      <% } %>
+            <a href="/<%=CP.url%>">Lees meer</a>
+           </article>
+      <% }} %>
     </section>
   </div>
 
